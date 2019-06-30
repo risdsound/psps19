@@ -1,0 +1,27 @@
+#N canvas 333 23 404 404 10;
+#X obj 25 265 send \$1;
+#X floatatom 24 114 5 0 0 1 set_channel - -;
+#X msg 24 191 /chan-in \$1;
+#X msg 106 190 /chan-out \$1;
+#X msg 212 215 /audio-out \$1;
+#X obj 211 152 select 1 2;
+#X msg 212 183 31;
+#X msg 248 183 32;
+#X obj 23 88 hradio 20 1 0 2 empty empty empty 0 -8 0 10 -262130 -260097
+-1 1;
+#X obj 213 101 + 1;
+#X text 33 74 1;
+#X text 53 74 2;
+#X connect 1 0 2 0;
+#X connect 1 0 3 0;
+#X connect 1 0 5 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 6 0;
+#X connect 5 1 7 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;
+#X connect 8 0 9 0;
+#X connect 9 0 1 0;
+#X coords 0 -1 1 1 130 130 1 10 20;
