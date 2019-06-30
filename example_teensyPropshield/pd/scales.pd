@@ -85,6 +85,7 @@
 -1;
 #X obj 162 15 loadbang;
 #X obj 421 6 inlet;
+#X obj 925 23 r \$1;
 #X connect 0 0 5 0;
 #X connect 0 0 17 0;
 #X connect 1 0 0 0;
