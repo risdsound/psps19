@@ -1,4 +1,4 @@
-#N canvas 668 103 760 521 10;
+#N canvas 419 23 760 521 10;
 #X obj 127 159 fm-osc~;
 #X obj 127 369 dac-out~;
 #X floatatom 188 98 5 0 0 1 frequency h-freq-e -;

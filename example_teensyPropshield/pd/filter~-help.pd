@@ -1,4 +1,4 @@
-#N canvas 551 81 760 521 10;
+#N canvas 347 23 760 521 10;
 #X obj 127 159 fm-osc~;
 #X obj 127 445 dac-out~;
 #X floatatom 188 98 5 0 0 1 frequency h-freq-f -;
@@ -10,7 +10,7 @@
 #X array array_filter 100 float 0;
 #X coords 0 1 99 -1 200 140 1 0 0;
 #X restore 486 289 graph;
-#X obj 338 342 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 338 342 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 378 343 <- graph;
 #X obj 338 379 metro 50;

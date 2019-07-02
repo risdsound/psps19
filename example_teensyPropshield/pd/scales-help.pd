@@ -1,4 +1,4 @@
-#N canvas 668 103 877 625 10;
+#N canvas 255 23 877 625 10;
 #X obj 108 283 fm-osc~;
 #X obj 108 493 dac-out~;
 #X floatatom 242 245 5 0 0 1 modulation_frequency h-mod-s -;
@@ -21,7 +21,7 @@
 #X obj 330 534 tabwrite~ array_scales;
 #X floatatom 135 246 5 0 0 1 frequency - -;
 #X obj 221 23 hsl 128 15 0 127 0 0 empty h-scl-s empty -2 -8 0 10 -262144
--1 -1 6600 1;
+-1 -1 5000 1;
 #X floatatom 218 42 5 0 0 0 - - -;
 #X obj 107 92 note-duration;
 #X floatatom 182 69 5 0 0 0 - h-dur-s -;

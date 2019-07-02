@@ -1,4 +1,4 @@
-#N canvas 181 100 760 521 10;
+#N canvas 248 23 760 521 10;
 #X floatatom 188 98 5 100 2000 1 frequency h-freq-d -;
 #X floatatom 250 121 5 0 0 1 modulation_frequency h-mod-d -;
 #X text 78 122 trigger;
