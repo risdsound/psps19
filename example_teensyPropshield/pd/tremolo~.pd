@@ -15,7 +15,7 @@
 #X obj 411 6 loadbang;
 #X msg 411 35 0.5;
 #X floatatom 411 62 5 0 0 0 - - -;
-#X floatatom 489 80 5 0 0 0 - - -;
+#X floatatom 488 60 5 0 0 0 - - -;
 #X msg 488 36 5;
 #X msg 237 206 \$1 500;
 #X msg 504 172 \$1 500;
@@ -33,6 +33,10 @@
 #X obj 751 127 clip 0 1;
 #X text 785 202 threshhold;
 #X obj 846 31 r \$1;
+#X obj 25 75 hsl 100 15 0 15 0 0 empty cutoff rate 20 8 0 10 -204800
+-4160 -1 3300 1;
+#X obj 25 55 hsl 100 15 0 1 0 0 empty cutoff wet 20 8 0 10 -204800
+-4160 -1 4950 1;
 #X connect 0 0 1 1;
 #X connect 1 0 4 0;
 #X connect 2 0 0 1;
@@ -48,9 +52,8 @@
 #X connect 12 0 17 0;
 #X connect 13 0 14 0;
 #X connect 14 0 15 0;
-#X connect 15 0 19 0;
-#X connect 15 0 6 0;
-#X connect 16 0 11 0;
+#X connect 15 0 34 0;
+#X connect 16 0 33 0;
 #X connect 17 0 16 0;
 #X connect 18 0 9 0;
 #X connect 19 0 8 0;
@@ -67,4 +70,7 @@
 #X connect 28 0 26 0;
 #X connect 29 0 15 0;
 #X connect 30 0 23 0;
-#X coords 0 -1 1 1 130 60 1 10 20;
+#X connect 33 0 11 0;
+#X connect 34 0 6 0;
+#X connect 34 0 19 0;
+#X coords 0 -1 1 1 130 80 1 10 20;

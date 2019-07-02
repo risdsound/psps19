@@ -18,7 +18,7 @@ iCompass maghead;
 
 //
 // this is where to change the MIDI channel for all sensors 
-const int channel = 2;
+const int channel = 1;
 //
 //
 

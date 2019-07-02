@@ -7,7 +7,7 @@
 // Edit these lines to create your own name.  The length must
 // match the number of characters in your custom name.
 
-#define MIDI_NAME   {'t','e','e','n','s','y','2'}
+#define MIDI_NAME   {'t','e','e','n','s','y','1'}
 #define MIDI_NAME_LEN  7
 
 // Do not change this part.  This exact format is required by USB.

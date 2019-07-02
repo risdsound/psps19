@@ -1,0 +1,34 @@
+#N canvas 204 399 678 468 10;
+#X obj 127 159 fm-osc~;
+#X obj 126 340 dac-out~;
+#X floatatom 209 26 5 0 0 1 frequency h-freq-o -;
+#X floatatom 250 121 5 0 0 1 modulation_frequency h-mod-o -;
+#X obj 188 69 f, f 4;
+#X obj 188 27 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 188 120 5 0 0 0 - - -;
+#X msg 127 121 1;
+#X text 78 122 trigger;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array array_osc 100 float 0;
+#X coords 0 1 99 -1 200 140 1 0 0;
+#X restore 430 261 graph;
+#X obj 282 314 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 322 315 <- graph;
+#X obj 282 351 metro 50;
+#X obj 282 382 tabwrite~ array_osc;
+#X obj 503 30 loadbang;
+#X msg 503 58 \; h-freq-o 200 \; h-mod-o 1 \;;
+#X connect 0 0 1 0;
+#X connect 0 0 13 0;
+#X connect 2 0 4 1;
+#X connect 3 0 0 2;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 5 0 7 0;
+#X connect 6 0 0 1;
+#X connect 7 0 0 0;
+#X connect 10 0 12 0;
+#X connect 12 0 13 0;
+#X connect 14 0 15 0;
