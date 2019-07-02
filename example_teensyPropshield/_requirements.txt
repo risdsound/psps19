@@ -1,4 +1,4 @@
-In order to use the code in this folder, you will need the following software and hardware.
+In order to use the code in this folder, you will need the following software and hardware.  Updates will be posted at https://github.com/risdsound/psps19
 
 
 =================================
