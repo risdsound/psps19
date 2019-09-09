@@ -1,0 +1,184 @@
+#N canvas 320 23 960 448 10;
+#N canvas 320 22 960 675 dataflow 0;
+#X obj 121 90 spigot;
+#X obj 184 28 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 121 28 5 0 0 0 - - -, f 5;
+#X floatatom 121 122 5 0 0 0 - - -, f 5;
+#X text 211 89 <- spigot is a gate that opens and close to let data
+pass or not;
+#X obj 128 265 select 10 11 12 13 14 15 16;
+#X floatatom 128 225 5 0 0 0 - - -, f 5;
+#X obj 128 306 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 170 306 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 212 306 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 254 306 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 296 306 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 338 306 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 380 306 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 422 306 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 76 203 cnv 5 650 5 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 109 356 cnv 5 650 5 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 350 503 route 1 2 3 4 5;
+#X floatatom 84 528 5 0 0 0 - - -, f 5;
+#X floatatom 432 562 5 0 0 0 - - -, f 5;
+#X floatatom 496 562 5 0 0 0 - - -, f 5;
+#X floatatom 561 562 5 0 0 0 - - -, f 5;
+#X floatatom 625 562 5 0 0 0 - - -, f 5;
+#X floatatom 688 562 5 0 0 0 - - -, f 5;
+#X text 542 500 <- route sorts based on the list's first element;
+#X text 467 258 <- select sends a bang when a value matches \, last
+outlet bangs when there is no match (useful for a sequencer);
+#X msg 188 419 2 33;
+#X msg 246 419 2 312;
+#X msg 373 419 3 12;
+#X msg 315 419 3 63;
+#X msg 431 419 4 872;
+#X msg 500 419 4 3.1;
+#X msg 569 419 5 77;
+#X msg 627 419 5 1.3;
+#X obj 146 618 pack f f;
+#X floatatom 163 529 5 0 0 0 - - -, f 5;
+#X obj 164 565 t b f;
+#X msg 9 494 1;
+#X msg 39 494 2;
+#X msg 69 494 3;
+#X msg 99 494 4;
+#X msg 128 494 5;
+#X obj 166 498 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 5700 1;
+#X connect 0 0 3 0;
+#X connect 1 0 0 1;
+#X connect 2 0 0 0;
+#X connect 5 0 7 0;
+#X connect 5 1 8 0;
+#X connect 5 2 9 0;
+#X connect 5 3 10 0;
+#X connect 5 4 11 0;
+#X connect 5 5 12 0;
+#X connect 5 6 13 0;
+#X connect 5 7 14 0;
+#X connect 6 0 5 0;
+#X connect 17 0 19 0;
+#X connect 17 1 20 0;
+#X connect 17 2 21 0;
+#X connect 17 3 22 0;
+#X connect 17 4 23 0;
+#X connect 18 0 34 0;
+#X connect 26 0 17 0;
+#X connect 27 0 17 0;
+#X connect 28 0 17 0;
+#X connect 29 0 17 0;
+#X connect 30 0 17 0;
+#X connect 31 0 17 0;
+#X connect 32 0 17 0;
+#X connect 33 0 17 0;
+#X connect 34 0 17 0;
+#X connect 35 0 36 0;
+#X connect 36 0 18 0;
+#X connect 36 1 34 1;
+#X connect 37 0 18 0;
+#X connect 38 0 18 0;
+#X connect 39 0 18 0;
+#X connect 40 0 18 0;
+#X connect 41 0 18 0;
+#X connect 42 0 35 0;
+#X restore 442 144 pd dataflow;
+#N canvas 320 22 960 675 send+receive 0;
+#X obj 500 82 send float_data;
+#X floatatom 500 51 5 0 0 0 - - -, f 5;
+#X floatatom 701 84 5 0 0 0 - - -, f 5;
+#X obj 701 53 receive float_data;
+#X text 464 219 When we begin to discuss audio signals \, there are
+similar objects with the "~" designation: send~ and receive~;
+#X floatatom 503 132 5 0 0 0 - - -, f 5;
+#X floatatom 701 165 5 0 0 0 - - -, f 5;
+#X obj 503 163 s float_data;
+#X obj 701 134 r float_data;
+#X msg 140 449 \; float_data \$1;
+#X floatatom 140 416 5 0 0 0 - - -, f 5;
+#X text 320 450 <- \$1 is a variable replaced by the incoming number
+;
+#X text 225 820 <- \$1 in this case allow us to make the send address
+the variable;
+#X obj 130 348 cnv 5 750 5 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 136 360 You can also send data via Pd commands which are special
+message boxes having a semicolon at the beginning:;
+#X text 54 47 Pd patches can get very busy visually with connector
+lines crossing every which way. One way to reduce the chaos is by making
+good use of subpatches. Another is to use the send and receive objects.
+These allow you to make connections when distances are too great or
+too confusing. Send and receive objects need a name argument so that
+they know they are linked. They will even connect between multiple
+patches if you have identically named sends and receives - so beware
+of this!;
+#X connect 1 0 0 0;
+#X connect 3 0 2 0;
+#X connect 5 0 7 0;
+#X connect 8 0 6 0;
+#X connect 10 0 9 0;
+#X restore 442 182 pd send+receive;
+#N canvas 320 22 960 675 on_load 1;
+#X obj 122 35 loadbang;
+#X msg 122 88 1;
+#X obj 59 170 spigot;
+#X obj 122 120 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X floatatom 59 112 5 0 0 0 - - -, f 5;
+#X floatatom 59 210 5 0 0 0 - - -, f 5;
+#X text 194 35 <- you can place loadbangs in your patch to initialize
+default states for your patches. In this case \, I'm using it to open
+a spigot when the patch initially loads;
+#X obj 184 107 cnv 5 750 5 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 414 278 receive param1;
+#X floatatom 414 307 5 0 0 0 - - -, f 5;
+#X floatatom 414 397 5 0 0 0 - - -, f 5;
+#X obj 414 368 receive param2;
+#X floatatom 583 306 5 0 0 0 - - -, f 5;
+#X floatatom 583 396 5 0 0 0 - - -, f 5;
+#X obj 583 277 receive param3;
+#X obj 583 367 receive param4;
+#X floatatom 756 306 5 0 0 0 - - -, f 5;
+#X floatatom 756 396 5 0 0 0 - - -, f 5;
+#X obj 756 277 receive param5;
+#X obj 756 367 receive param6;
+#X msg 56 308 \; param1 100 \; param2 200 \; param3 1 \; param4 1 \;
+param5 44.3 \; param6 0.2;
+#X obj 56 264 loadbang;
+#X text 289 486 In this way \, you are easily able to define multiple
+possibilities for the state of your patch - and quickly change the
+defaults if you should choose (easier than hunting for a zillion loadbangs
+scattered throughout your patch).;
+#X msg 219 311 \; param1 990 \; param2 2.2 \; param3 0 \; param4 1.2222
+\; param5 4004.3 \; param6 5.5;
+#X text 342 147 Loadbangs can be quite useful for presets. However
+a better strategy to handle default states (presets) can be accomplished
+with a Pd command to send data to several named recieves - like so
+(notice I've used one loadbang to send the defaults contained in a
+message rather than using six loadbangs):;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 5 0;
+#X connect 3 0 2 1;
+#X connect 4 0 2 0;
+#X connect 8 0 9 0;
+#X connect 11 0 10 0;
+#X connect 14 0 12 0;
+#X connect 15 0 13 0;
+#X connect 18 0 16 0;
+#X connect 19 0 17 0;
+#X connect 21 0 20 0;
+#X restore 442 219 pd on_load;
+#X text 442 111 DATA FLOW;

@@ -1,0 +1,39 @@
+#N canvas 320 22 960 675 10;
+#X obj 169 143 bng 50 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 169 207 tgl 50 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 169 273 nbx 5 50 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 30
+-204786 -258113 -258113 59 256;
+#X obj 51 191 vsl 50 300 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 11400 1;
+#X obj 128 428 hsl 300 50 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 16600 1;
+#X obj 766 220 vradio 20 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 5;
+#X obj 555 390 hradio 20 1 0 10 empty empty empty 0 -8 0 10 -262144
+-1 -1 6;
+#X text 342 284 <- numbox (a special GUI version of the regular number)
+;
+#X text 242 142 <- bang (bang means "do it" - simply outputs a message
+for an object to do what it's supposed to);
+#X text 241 215 <- toggle (outputs the number 1 or 0 \, on/off states)
+;
+#X floatatom 51 527 5 0 0 0 - - -, f 5;
+#X floatatom 125 490 5 0 0 0 - - -, f 5;
+#X floatatom 766 391 5 0 0 0 - - -, f 5;
+#X floatatom 555 415 5 0 0 0 - - -, f 5;
+#X text 131 386 <- sliders;
+#X text 53 25 A few more of the items under the Put menu: GUI (Graphic
+User Interface) objects that help in the contruction and playing of
+programs. Take a look under the Put menu and notice these items also
+have key commands for instantiating them.;
+#X text 448 389 radio buttons ->;
+#X text 532 557 One more thing to try before moving on. Right click
+(or ctrl-click) on a GUI object and go to Properties. Notice that you
+can change aspects of these objects in terms of the data passed and/or
+their color and size.;
+#X connect 3 0 10 0;
+#X connect 4 0 11 0;
+#X connect 5 0 12 0;
+#X connect 6 0 13 0;

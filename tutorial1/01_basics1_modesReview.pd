@@ -1,0 +1,20 @@
+#N canvas 320 23 960 675 10;
+#X text 538 300 This text that you are reading is a "comment \, " one
+of the 5 primary items you'll see under the "Put" menu. Notice the
+key commands for each \, which will make your patching experience much
+faster.;
+#X text 141 87 There are the two modes for working in Pd. You switch
+between these modes by clicking ctrl-E (PC) or command-E (Mac). When
+you switch modes you should see the cursor change from a hand (Edit
+mode) to an arrow (Play mode). Sometimes it's hard to remember which
+mode you are in. Just remember to take a look at the cursor to tell
+you which mode is active \, and always remember that after you use
+the ctrl-E command \, the cursor doesn't change its appearance till
+you move it. In Edit mode \, you should be able to move this text around
+\, click on it and add to it. In play mode \, this text is unmoveable.
+Try it!;
+#X text 185 473 If Pd is ever acting strange \, check your Audio Settings
+under the Media menu. Make sure an input and output device are selected.
+For now \, now let's check that you have both "built-in" options selected.
+Once you've check that \, you can try the Test Audio and MIDI patch
+\, also under the Media menu.;

@@ -1,0 +1,22 @@
+#N canvas 320 22 960 675 10;
+#X obj 294 385 metro 500;
+#X msg 290 303 1;
+#X msg 405 303 0;
+#X obj 310 452 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 204 39 In the Edit menu \, you'll notice the familiar commands
+of Cut \, Copy \, and Paste. You can use these operations in your patches.
+This is very useful \, let's say \, when you want to grab something
+out of a help patch and copy it into your own patch. Simply highlight
+the objects you want in Edit mode and Cut/Copy/Paste as desired. This
+type of editing can also be a time saver for copying elements within
+your patch --- however you'll generally want to use the Duplicate command
+in this instance. Partly because \, sometimes the Copy/Paste combo
+can place things strangely and partly because the Duplicate command
+is just one step faster. Try both on the objects below \, then try
+using Copy/Paste from the help patch of metro. Keep in mind that if
+you modify a help patch - don't save it!;
+#X text 491 369 Note: Good patching practice is to arrange your objects
+so that the dataflow is from the top-down \, and from right-to-left.
+Avoid connecting-lines overlapping objects as much as possible (for
+the sake of readability).;

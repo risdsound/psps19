@@ -1,0 +1,10 @@
+#N canvas 320 23 960 684 10;
+#X text 215 128 "An instrument that uses computer-generated sound can
+be called a digital music instrument (DMI) and consists of a control
+surface or gestural controller \, which drives the musical parameters
+of a sound synthesizer in real time." (Miranda and Wanderley. 2006
+New Digital Musical Instruments. A-R Editions \, Inc.);
+#X text 475 269 In this class \, we'll be exploring DMI design. We'll
+be building audio software and electronic circuits that will let us
+map gestural control to changes in sound. We'll also cover using off-the-shelf
+interfaces (like MIDI control surfaces and keyboards).;

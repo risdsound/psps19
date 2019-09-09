@@ -1,0 +1,22 @@
+#N canvas 320 22 960 675 10;
+#X obj 94 148 metro;
+#X text 164 146 <- here is an object;
+#X msg 94 187 hello;
+#X text 164 186 <- here is a message;
+#X floatatom 94 227 5 0 0 0 - - -;
+#X text 164 226 <- here is a number;
+#X text 91 264 My comment;
+#X text 164 266 <- here is a comment;
+#X text 359 181 <----- try instantiating each of these items in Edit
+mode using the key commands.;
+#X text 96 49 The primary text entities are under the "Put" menu. We'll
+work with four of them (for now \, disregard symbol).;
+#X text 473 344 You'll notice that these items have little rectangles
+in some of the corners. These are "inlets" and "outlets \, " and represent
+the points at which connections can be made between items.;
+#X text 473 474 Also try right-clicking in the white space and selecting
+Help. You'll see a helpful list of the basic vanilla objects for Pd.
+;
+#X text 473 409 VERY IMPORTANT. Most objects have a help file associated
+with them. You can easily access the help patch by right-clicking (or
+CTRL-click on Mac). Try this on the items above.;

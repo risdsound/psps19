@@ -1,0 +1,74 @@
+#N canvas 320 23 960 684 10;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array waveform_array 2051 float 0;
+#X coords 0 1 2050 -1 200 140 1;
+#X restore 36 108 graph;
+#X msg 102 521 \; pd dsp \$1;
+#X obj 102 473 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 245 555 dac~;
+#N canvas 0 22 771 392 vol 0;
+#X obj 110 220 outlet~;
+#X obj 96 36 inlet~;
+#X obj 180 36 inlet;
+#X obj 110 167 *~;
+#X obj 140 133 line~;
+#X msg 140 101 \$1 100;
+#X connect 1 0 3 0;
+#X connect 2 0 5 0;
+#X connect 3 0 0 0;
+#X connect 4 0 3 1;
+#X connect 5 0 4 0;
+#X restore 245 477 pd vol;
+#X floatatom 278 444 5 0 1 0 - - -, f 5;
+#X obj 281 396 hsl 128 30 0 1 0 0 empty empty volume -2 -8 0 10 -262144
+-1 -1 3700 1;
+#X obj 249 108 hsl 128 30 0 1 0 0 empty empty frequency -2 -8 0 10
+-262144 -1 -1 4400 1;
+#X text 76 36 using sinesum messages to generate wavetables;
+#X obj 246 280 phasor~;
+#X obj 246 361 tabread4~ waveform_array;
+#X obj 246 320 *~ 2051;
+#X floatatom 246 149 5 0 0 0 - - -, f 5;
+#X floatatom 353 186 5 0 0 0 - - -, f 5;
+#X obj 246 218 pack f 200;
+#X obj 246 249 sig~;
+#X obj 246 186 * 2000;
+#X msg 461 103 \; waveform_array sinesum 2051 1 0.5 0.33 0.25 \; waveform_array
+normalize 1 \;;
+#X msg 461 28 \; waveform_array sinesum 2051 1 \; waveform_array normalize
+1 \;;
+#X msg 461 178 \; waveform_array sinesum 2051 1 0.5 0.333333 0.25 0.2
+0.166667 0.142857 0.125 0.111111 0.1 0.090909 0.083333 0.076923 \;
+waveform_array normalize 1 \;;
+#X msg 461 297 \; waveform_array sinesum 2051 1 0 -0.1 0 \; waveform_array
+normalize 1 \;;
+#X msg 461 372 \; waveform_array sinesum 2051 1 0 -0.111111 0.04 0
+-0.0204082 0 0.0123457 0 -0.00826446 0 \; waveform_array normalize
+1 \;;
+#X msg 461 469 \; waveform_array sinesum 2051 1 0 0.5 0 \; waveform_array
+normalize 1 \;;
+#X msg 461 544 \; waveform_array sinesum 2051 1 0 0.333333 0 0.2 0
+0.142857 0 0.111111 0 0.090909 0 0.076923 \; waveform_array normalize
+1 \;;
+#X text 648 40 <- sine wave;
+#X text 796 199 <- saw wave (12 harmonics);
+#X text 732 116 <- saw wave (4 harmonics);
+#X text 709 311 <- triangle wave (4 harmonics);
+#X text 705 477 <- square wave (4 harmonics);
+#X text 829 390 <- triangle wave \; (12 harmonics);
+#X text 832 558 <- square wave \; (12 harmonics);
+#X connect 2 0 1 0;
+#X connect 4 0 3 0;
+#X connect 4 0 3 1;
+#X connect 5 0 4 1;
+#X connect 6 0 5 0;
+#X connect 7 0 12 0;
+#X connect 9 0 11 0;
+#X connect 10 0 4 0;
+#X connect 11 0 10 0;
+#X connect 12 0 16 0;
+#X connect 13 0 14 1;
+#X connect 14 0 15 0;
+#X connect 15 0 9 0;
+#X connect 16 0 14 0;

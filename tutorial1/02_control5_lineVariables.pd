@@ -1,0 +1,36 @@
+#N canvas 320 22 960 675 10;
+#X msg 360 138 \$1 500;
+#X floatatom 360 98 5 0 0 0 - - -, f 5;
+#X msg 360 227 41;
+#X obj 267 206 line;
+#X floatatom 267 245 5 0 0 0 - - -, f 5;
+#X obj 210 444 pack f 500;
+#X floatatom 317 407 5 0 0 0 - - -, f 5;
+#X floatatom 210 407 5 0 0 0 - - -, f 5;
+#X msg 210 529 91;
+#X obj 114 488 line;
+#X floatatom 114 527 5 0 0 0 - - -, f 5;
+#X text 397 515 the "f" specifies a float number without stating a
+default \; this is overwritten by the incoming number;
+#X text 510 133 a message with a "\$1" in it means that this is variable
+that can be replaced;
+#X text 510 194 we'll use this alot - especially with the line~ or
+line objects \, which allows us to smooth data over a time period specified
+in milliseconds;
+#X text 396 426 another common way to format messages with variables
+is to use the pack object \, this makes it easy to specify a default
+and overwrite it in both message positions;
+#X text 73 52 VARIABLES WITH LINE;
+#X msg 360 188 set \$1;
+#X msg 223 488 set \$1;
+#X connect 0 0 3 0;
+#X connect 0 0 16 0;
+#X connect 1 0 0 0;
+#X connect 3 0 4 0;
+#X connect 5 0 9 0;
+#X connect 5 0 17 0;
+#X connect 6 0 5 1;
+#X connect 7 0 5 0;
+#X connect 9 0 10 0;
+#X connect 16 0 2 0;
+#X connect 17 0 8 0;

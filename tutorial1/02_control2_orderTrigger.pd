@@ -1,0 +1,58 @@
+#N canvas 320 22 960 675 10;
+#X obj 426 108 print A;
+#X obj 368 108 print B;
+#X obj 310 108 print C;
+#X obj 252 108 print D;
+#X obj 195 80 trigger bang float symbol list anything;
+#X msg 195 34 20 40 50;
+#X obj 461 312 print A;
+#X obj 328 324 print B;
+#X obj 205 325 print C;
+#X obj 114 356 print D;
+#X msg 54 188 20 40 50;
+#X text 133 232 <- you can abbreviate trigger and its arguments;
+#X obj 54 234 t b f s l a;
+#X obj 195 108 print E;
+#X obj 25 330 print E;
+#X obj 468 547 +;
+#X floatatom 446 426 5 0 0 0 - - -;
+#X floatatom 420 507 5 0 0 0 - - -;
+#X floatatom 468 588 5 0 0 0 - - -;
+#X obj 446 462 t b f;
+#X obj 624 567 +;
+#X floatatom 654 524 5 0 0 0 - - -;
+#X floatatom 624 491 5 0 0 0 - - -;
+#X floatatom 624 608 5 0 0 0 - - -;
+#X text 557 94 TRIGGER sends its input to many places in right-to-left
+order. It is very useful when you need precise control over where and
+when data is passed. Check out the Pd window (print window) to see
+proof on the order of data (rather than E - A as suggested by a left-to-right
+reading \, it is indeed right-to-left). The order of operations in
+Pd is always right-to-left when dealing within the inlets/outlets of
+individual objects \, yet the order of operations amongst independent
+objects is related to when those objects were instantiated (huh? yes
+\, hard to keep track of)... thus trigger addresses the need to make
+sure data flows as you'd like it to.;
+#X text 495 459 <- common solution when you want the right value to
+trigger an output;
+#X text 714 533 <- compare;
+#X connect 4 0 13 0;
+#X connect 4 1 3 0;
+#X connect 4 2 2 0;
+#X connect 4 3 1 0;
+#X connect 4 4 0 0;
+#X connect 5 0 4 0;
+#X connect 10 0 12 0;
+#X connect 12 0 14 0;
+#X connect 12 1 9 0;
+#X connect 12 2 8 0;
+#X connect 12 3 7 0;
+#X connect 12 4 6 0;
+#X connect 15 0 18 0;
+#X connect 16 0 19 0;
+#X connect 17 0 15 0;
+#X connect 19 0 17 0;
+#X connect 19 1 15 1;
+#X connect 20 0 23 0;
+#X connect 21 0 20 1;
+#X connect 22 0 20 0;

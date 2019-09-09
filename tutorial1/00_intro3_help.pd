@@ -1,0 +1,7 @@
+#N canvas 320 23 974 499 10;
+#X text 153 125 Built-in help...;
+#X text 485 284 By going to Help -> Browser \, you'll notice there's
+built-in examples. Check out: Pd Help > Browser > Pure Data > control.examples
+& audio.examples;
+#X text 289 190 For the built-in Pd manual \, go to Help > Pd Help
+;

@@ -1,0 +1,62 @@
+#N canvas 320 23 960 684 10;
+#X obj 452 592 dac~;
+#X msg 137 253 \; pd dsp \$1;
+#X obj 137 200 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 174 201 <- turn on sound;
+#X obj 670 415 line~;
+#X obj 452 503 *~;
+#X obj 670 373 pack f 20;
+#X floatatom 670 340 5 0 0 0 - - -, f 5;
+#X obj 452 264 line~;
+#X floatatom 452 127 5 0 0 0 - - -, f 5;
+#X obj 455 76 hsl 200 30 0 1 0 0 empty empty frequency -2 -10 0 12
+-262144 -1 -1 19900 1;
+#X obj 452 176 * 1000;
+#X floatatom 559 176 5 0 0 1 glide - -, f 5;
+#X obj 452 222 pack f 200;
+#X floatatom 766 341 5 0 0 1 ramp - -, f 5;
+#X obj 673 303 hsl 200 30 0 1 0 0 empty empty gain -2 -10 0 12 -262144
+-1 -1 6100 1;
+#X obj 452 304 phasor~ 440;
+#X obj 452 351 *~ 2;
+#X obj 452 394 -~ 1;
+#X text 86 94 GETTING OTHER WAVEFORM TYPES - A stronger phasor~ \;
+A phasor~ moves between 0 and 1 \; By multiplying by 2 and substracting
+by 1 we scale the phasor~ to move between -1 and 1;
+#N canvas 11 23 306 397 array_viz 1;
+#X obj 139 103 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array ph2_array 100 float 0;
+#X coords 0 1 99 -1 200 140 1 0 0;
+#X restore 42 209 graph;
+#X text 163 102 graph;
+#X obj 139 72 metro 100;
+#X obj 17 64 inlet~;
+#X obj 139 11 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 139 146 tabwrite~ ph2_array;
+#X connect 0 0 6 0;
+#X connect 3 0 0 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X restore 230 542 pd array_viz;
+#X connect 2 0 1 0;
+#X connect 4 0 5 1;
+#X connect 5 0 0 0;
+#X connect 5 0 0 1;
+#X connect 5 0 20 0;
+#X connect 6 0 4 0;
+#X connect 7 0 6 0;
+#X connect 8 0 16 0;
+#X connect 9 0 11 0;
+#X connect 10 0 9 0;
+#X connect 11 0 13 0;
+#X connect 12 0 13 1;
+#X connect 13 0 8 0;
+#X connect 14 0 6 1;
+#X connect 15 0 7 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 18 0 5 0;

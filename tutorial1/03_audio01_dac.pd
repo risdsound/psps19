@@ -1,0 +1,31 @@
+#N canvas 654 44 960 684 10;
+#X text 521 537 ON;
+#X text 645 537 OFF;
+#X text 706 484 <-- click these;
+#X text 482 417 Fourth. You can turn on/off sound with Pd command messages
+\, like so:;
+#X msg 506 476 \; pd dsp 1;
+#X msg 625 476 \; pd dsp 0;
+#X msg 201 215 \; pd dsp \$1;
+#X obj 201 176 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 483 197 Second. Let's make sure your audio works. Under the
+Media menu \, there is a selection for "Test Audio and MIDI \, " go
+ahead and select that item. In that patch you'll see a 3 position radio
+button labeled 'test tones'. Click '60' and '80' to test.;
+#X text 483 328 Third. Take a look at your Pd window (or Console).
+You'll notice you can turn sound on and off by checking the "compute
+audio" box.;
+#X text 70 148 This is a very common way to build the audio on/off
+inside your patch ->;
+#X text 482 49 First. Under the Pd menu \, check this path Preferences
+-> Audio Settings. Here you'll see your default input/output device
+\, sampling rate \, and so forth. For now \, you will probably not
+need to change anything - but if you are using an audio device other
+than what's built into your machine \, this is where you can change
+the settings.;
+#X text 70 50 Pd is strongly suited for real-time audio synthesis and
+audio signal processing. It can be used as the audio engine for mobile
+apps (using libPd). It also runs quite well in embedded computing situations
+(e.g. Raspberry Pi).;
+#X connect 7 0 6 0;

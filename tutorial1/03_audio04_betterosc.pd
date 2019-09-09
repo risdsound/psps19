@@ -1,0 +1,70 @@
+#N canvas 320 33 960 684 10;
+#X obj 344 581 dac~;
+#X msg 9 194 \; pd dsp \$1;
+#X obj 9 151 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X obj 343 279 osc~ 440;
+#X text 46 150 <- turn on sound;
+#X obj 475 431 line~;
+#X obj 344 492 *~;
+#X obj 475 362 pack f 20;
+#X floatatom 475 340 5 0 0 0 - - -, f 5;
+#X obj 343 240 line~;
+#X floatatom 343 98 5 0 0 0 - - -, f 5;
+#X obj 346 55 hsl 200 30 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 14300 1;
+#X obj 343 162 * 1000;
+#X floatatom 450 162 5 0 0 0 - - -, f 5;
+#X text 557 54 <- hslider for a GUI;
+#X text 520 161 <- adjust the glide between freq.;
+#X obj 343 201 pack f 200;
+#X text 421 252 <- line~ enables signal control over the osc~ freq.
+;
+#X floatatom 571 340 5 0 0 0 - - -, f 5;
+#X text 639 358 <- adjust ramp for volume changes;
+#X text 543 430 <- line~ enables signal control over volume;
+#X text 10 54 A BETTER OSCILLATOR MODULE;
+#X obj 478 301 hsl 200 30 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 5200 1;
+#X text 689 300 <- hslider for a GUI;
+#X text 476 214 <- pack is handy for formatting a message;
+#X msg 124 379 718.593;
+#X msg 124 347 set \$1;
+#X obj 124 321 line;
+#N canvas 11 23 306 397 array_viz 1;
+#X obj 139 103 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array osc2_array 100 float 0;
+#X coords 0 1 99 -1 200 140 1 0 0;
+#X restore 42 209 graph;
+#X text 163 102 graph;
+#X obj 139 72 metro 100;
+#X obj 17 64 inlet~;
+#X obj 139 11 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 139 146 tabwrite~ osc2_array;
+#X connect 0 0 6 0;
+#X connect 3 0 0 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X restore 230 542 pd array_viz;
+#X connect 2 0 1 0;
+#X connect 3 0 6 0;
+#X connect 5 0 6 1;
+#X connect 6 0 0 0;
+#X connect 6 0 0 1;
+#X connect 6 0 28 0;
+#X connect 7 0 5 0;
+#X connect 8 0 7 0;
+#X connect 9 0 3 0;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;
+#X connect 12 0 16 0;
+#X connect 13 0 16 1;
+#X connect 16 0 9 0;
+#X connect 16 0 27 0;
+#X connect 18 0 7 1;
+#X connect 22 0 8 0;
+#X connect 26 0 25 0;
+#X connect 27 0 26 0;

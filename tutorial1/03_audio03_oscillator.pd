@@ -1,0 +1,52 @@
+#N canvas 320 23 960 684 10;
+#X obj 371 587 dac~;
+#X msg 93 230 \; pd dsp \$1;
+#X obj 93 178 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 371 109 osc~ 440;
+#X obj 371 429 *~ 0.5;
+#X floatatom 371 53 5 0 0 0 - - -, f 5;
+#X floatatom 434 230 5 0 0 0 - - -, f 5;
+#X obj 434 299 clip 0 1;
+#X floatatom 434 353 5 0 0 0 - - -, f 5;
+#X text 534 298 <- using clip to make sure values stay in the 0 to
+1 range;
+#X text 474 109 <- osc~ generates a sine wave. The argument specifies
+it's initial frequency.;
+#X text 513 224 <- shift \, click \, and drag to change values after
+decimal place. values for volume should only be 0 to 1;
+#X text 133 178 <- turn on sound;
+#X text 449 51 <- you may adjust the frequency of the oscillator;
+#X text 435 585 <- sound sent out to both speakers (2-channel or stereo)
+;
+#X text 459 424 <- the *~ object enables you to scale the signal -
+very useful for creating a volume control. Here it is first instantiated
+with 0.5 (cutting the volume in half). Numbers coming in the second
+inlet change the value.;
+#N canvas 11 23 306 397 array_viz 1;
+#X obj 139 103 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array osc_array 100 float 0;
+#X coords 0 1 99 -1 200 140 1 0 0;
+#X restore 42 209 graph;
+#X text 163 102 graph;
+#X obj 139 72 metro 100;
+#X obj 17 64 inlet~;
+#X obj 139 11 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 139 146 tabwrite~ osc_array;
+#X connect 0 0 6 0;
+#X connect 3 0 0 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X restore 230 542 pd array_viz;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 4 0 0 1;
+#X connect 4 0 16 0;
+#X connect 5 0 3 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 4 1;

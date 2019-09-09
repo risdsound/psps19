@@ -1,0 +1,25 @@
+#N canvas 320 22 960 675 10;
+#N canvas 40 135 1218 418 this_can_be_named_whatever 0;
+#X obj 119 56 inlet;
+#X obj 120 239 outlet;
+#X obj 199 57 inlet~;
+#X obj 200 240 outlet~;
+#X text 352 37 This subpatch does nothing \, except pass the data in
+and then out. Notice that there are two kinds of inlets and outlets
+here. Ones with the ~ sign and ones without. This is an important distinction
+that we'll get to later. The ~ sign marks the difference between an
+object that works with audio signals vs. those that work control data.
+You'll notice that the line connecting the audio signal objects is
+bold. This is another way to tell the difference between control and
+audio.;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X restore 363 255 pd this_can_be_named_whatever;
+#X text 309 305 For many of the examples to follow \, there will be
+subpatches nested within parent patches. Just click these in Play mode
+to see the contents. Try making your own subpatch with inlets and outlets.
+Subpatches help to keep things readable.;
+#X text 310 154 SUBPATCHES. In Pd you can make a subpatch with an object
+called "pd." You simply create a new object called "pd" with a creation
+argument of whatever you'd like to call the subpatch. To see the contents
+\, just click once on it in Play mode.;

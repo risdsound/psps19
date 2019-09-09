@@ -1,0 +1,351 @@
+#N canvas 320 23 960 448 10;
+#N canvas 320 22 960 675 integers_vs_floats 0;
+#X floatatom 233 93 5 0 0 0 - - -, f 5;
+#X floatatom 457 220 20 0 0 0 - - -, f 20;
+#X text 584 218 <- number boxes can be made wider to accomodate larger
+numbers or those with more precision. To make a number box larger \,
+right click and select Properties;
+#X msg 457 177 10.4837;
+#X msg 558 178 12233.2;
+#X obj 126 339 int;
+#X floatatom 126 295 5 0 0 0 - - -, f 5;
+#X floatatom 126 387 10 0 0 0 - - -, f 10;
+#X msg 135 237 10.55;
+#X msg 227 230 10.75;
+#X msg 298 262 11.05;
+#X msg 58 244 10.35;
+#X text 159 336 <- int stands for integer. Here it is used to round
+a float to a whole number (notice that it rounds down);
+#X obj 189 557 int 33;
+#X floatatom 252 492 5 0 0 0 - - -, f 5;
+#X obj 189 531 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 189 597 5 0 0 0 - - -, f 5;
+#X floatatom 403 527 5 0 0 0 - - -, f 5;
+#X obj 296 531 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 296 597 5 0 0 0 - - -, f 5;
+#X obj 296 557 float 33.3;
+#X text 548 548 <- the int and float objects can be used to store numbers
+for later output;
+#X text 63 15 As a general rule \, Pd works with floating point numbers
+(those with decimal places) though it is possible to work with integers
+(whole numbers) as well.;
+#X text 310 85 <- to see decimal places in a number box \, you must
+shift \, click and drag. Otherwise you will only change values before
+the decimal place. You can also type in a number and hit enter to change.
+;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 7 0;
+#X connect 6 0 5 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 0;
+#X connect 10 0 6 0;
+#X connect 11 0 6 0;
+#X connect 13 0 16 0;
+#X connect 14 0 13 1;
+#X connect 15 0 13 0;
+#X connect 17 0 20 1;
+#X connect 18 0 20 0;
+#X connect 20 0 19 0;
+#X restore 432 113 pd integers_vs_floats;
+#N canvas 320 22 959 675 arithmetic 1;
+#X obj 31 91 +;
+#X floatatom 106 30 5 0 0 0 - - -, f 5;
+#X floatatom 30 30 5 0 0 0 - - -, f 5;
+#X text 382 16 Remember Pd works right to left. A change in the left
+inlet will cause the calculation to complete.;
+#X floatatom 31 133 5 0 0 0 - - -, f 5;
+#X floatatom 482 92 5 0 0 0 - - -, f 5;
+#X floatatom 483 195 5 0 0 0 - - -, f 5;
+#X obj 483 153 + 5;
+#X floatatom 382 92 5 0 0 0 - - -, f 5;
+#X floatatom 383 195 5 0 0 0 - - -, f 5;
+#X obj 383 153 + 5.6;
+#X floatatom 561 92 5 0 0 0 - - -, f 5;
+#X text 567 152 <- with a creation argument which can be overridden
+with a change in the right inlet;
+#X floatatom 113 196 5 0 0 0 - - -, f 5;
+#X floatatom 29 196 5 0 0 0 - - -, f 5;
+#X floatatom 30 299 5 0 0 0 - - -, f 5;
+#X obj 30 257 -;
+#X floatatom 107 368 5 0 0 0 - - -, f 5;
+#X floatatom 30 368 5 0 0 0 - - -, f 5;
+#X floatatom 31 471 5 0 0 0 - - -, f 5;
+#X text 76 256 <- subtraction;
+#X text 76 90 <- addition \, without a creation argument;
+#X text 76 428 <- multiplication;
+#X obj 31 429 *;
+#X floatatom 110 550 5 0 0 0 - - -, f 5;
+#X floatatom 31 550 5 0 0 0 - - -, f 5;
+#X floatatom 32 653 5 0 0 0 - - -, f 5;
+#X obj 32 611 /;
+#X text 77 610 <- division;
+#X floatatom 378 301 5 0 0 0 - - -, f 5;
+#X floatatom 378 376 5 0 0 0 - - -, f 5;
+#X obj 378 336 expr ($f1 - 32) * 5/9;
+#X floatatom 378 449 5 0 0 0 - - -, f 5;
+#X obj 378 414 expr (1.8 * $f1) + 32;
+#X text 533 366 <- expressions (for instance fahrenheit to celsius
+conversion);
+#X obj 582 554 + 1;
+#X floatatom 621 625 0 0 0 0 - - -;
+#X obj 498 557 f 1;
+#X msg 536 508 1;
+#X obj 498 508 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 583 508 <- reset;
+#X text 640 555 <- a counter made with addition;
+#X obj 498 588 t f f, f 21;
+#X connect 0 0 4 0;
+#X connect 1 0 0 1;
+#X connect 2 0 0 0;
+#X connect 5 0 7 0;
+#X connect 7 0 6 0;
+#X connect 8 0 10 0;
+#X connect 10 0 9 0;
+#X connect 11 0 7 1;
+#X connect 13 0 16 1;
+#X connect 14 0 16 0;
+#X connect 16 0 15 0;
+#X connect 17 0 23 1;
+#X connect 18 0 23 0;
+#X connect 23 0 19 0;
+#X connect 24 0 27 1;
+#X connect 25 0 27 0;
+#X connect 27 0 26 0;
+#X connect 29 0 31 0;
+#X connect 30 0 33 0;
+#X connect 31 0 30 0;
+#X connect 33 0 32 0;
+#X connect 35 0 37 1;
+#X connect 37 0 42 0;
+#X connect 38 0 37 1;
+#X connect 39 0 37 0;
+#X connect 42 0 35 0;
+#X connect 42 1 36 0;
+#X restore 432 148 pd arithmetic;
+#N canvas 320 22 960 675 logic 0;
+#X obj 96 168 &&;
+#X floatatom 96 127 5 0 0 0 - - -, f 5;
+#X floatatom 164 127 5 0 0 0 - - -, f 5;
+#X floatatom 96 212 5 0 0 0 - - -, f 5;
+#X obj 96 258 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 380 373 5 0 0 0 - - -, f 5;
+#X floatatom 480 373 5 0 0 0 - - -, f 5;
+#X floatatom 380 470 5 0 0 0 - - -, f 5;
+#X obj 380 419 ||;
+#X text 539 400 <- logical OR \, outputs 0 when both left and right
+values are zero (remember right-to-left operation);
+#X text 204 168 <- logical AND \, outputs 1 if left and right values
+are non-zero (remember right-to-left operation);
+#X obj 96 79 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 164 79 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 380 321 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 480 321 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 381 529 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 419 30 LOGICAL OPERATORS, f 21;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 3 0 4 0;
+#X connect 5 0 8 0;
+#X connect 6 0 8 1;
+#X connect 7 0 15 0;
+#X connect 8 0 7 0;
+#X connect 11 0 1 0;
+#X connect 12 0 2 0;
+#X connect 13 0 5 0;
+#X connect 14 0 6 0;
+#X restore 432 218 pd logic;
+#N canvas 320 22 960 675 random 0;
+#X obj 63 108 random 4;
+#X obj 63 72 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 63 157 5 0 0 0 - - -, f 5;
+#X obj 252 257 random 401;
+#X obj 252 294 / 100;
+#X floatatom 252 327 5 0 0 0 - - -, f 5;
+#X text 380 256 <- generates a random whole number between 0 and 400
+;
+#X text 338 293 <- divide by 100 to get a float between 0 - 4;
+#X text 181 107 <- generates a random whole number between 0 and 3
+;
+#X obj 119 481 random 4;
+#X text 227 483 <- generates a random whole number between 0 and 3
+;
+#X obj 119 523 + 1;
+#X floatatom 119 561 5 0 0 0 - - -, f 5;
+#X text 207 520 <- add 1 to change the range to 1 - 4;
+#X obj 226 206 cnv 5 650 5 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 90 416 cnv 5 650 5 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 252 219 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 119 442 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 9 0 11 0;
+#X connect 11 0 12 0;
+#X connect 16 0 3 0;
+#X connect 17 0 9 0;
+#X restore 432 253 pd random;
+#N canvas 320 22 960 675 number_ranges 0;
+#X obj 118 267 moses 10;
+#X floatatom 118 232 5 0 0 0 - - -, f 5;
+#X floatatom 118 314 5 0 0 0 - - -, f 5;
+#X floatatom 203 314 5 0 0 0 - - -, f 5;
+#X floatatom 80 46 5 0 0 0 - - -, f 5;
+#X floatatom 80 129 5 0 0 0 - - -, f 5;
+#X obj 80 82 clip 0 100;
+#X text 160 81 <- only output a particular range of numbers;
+#X text 275 264 <- part a stream of numbers \, everything before the
+argument goes out the left outlet \, everything after out the right
+;
+#X obj 676 108 change;
+#X msg 487 46 1;
+#X msg 544 46 1;
+#X msg 593 46 1;
+#X msg 663 46 0;
+#X msg 725 46 9;
+#X obj 676 155 print;
+#X floatatom 117 486 5 0 0 0 - - -, f 5;
+#X floatatom 186 486 5 0 0 0 - - -, f 5;
+#X msg 117 393 33 44;
+#X obj 117 439 swap;
+#X msg 214 393 55 22;
+#X text 285 435 <- swap numbers \, thus changing right to left order
+;
+#X obj 76 192 cnv 5 650 5 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 245 9 cnv 5 650 5 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 92 370 cnv 5 650 5 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 760 107 <- remove redundancy, f 21;
+#X connect 0 0 2 0;
+#X connect 0 1 3 0;
+#X connect 1 0 0 0;
+#X connect 4 0 6 0;
+#X connect 6 0 5 0;
+#X connect 9 0 15 0;
+#X connect 10 0 9 0;
+#X connect 11 0 9 0;
+#X connect 12 0 9 0;
+#X connect 13 0 9 0;
+#X connect 14 0 9 0;
+#X connect 18 0 19 0;
+#X connect 19 0 16 0;
+#X connect 19 1 17 0;
+#X connect 20 0 19 0;
+#X restore 432 288 pd number_ranges;
+#X text 432 80 NUMBERS;
+#N canvas 25 23 1222 731 relational 0;
+#X floatatom 143 120 5 0 0 0 - - -, f 5;
+#X floatatom 230 120 5 0 0 0 - - -, f 5;
+#X obj 165 196 ==;
+#X floatatom 165 234 5 0 0 0 - - -, f 5;
+#X text 212 195 <- are the numbers equal?;
+#X obj 165 271 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 213 267 <- toggle can take 1 or 0 as well as output 1 or 0
+;
+#X floatatom 657 120 5 0 0 0 - - -, f 5;
+#X floatatom 749 120 5 0 0 0 - - -, f 5;
+#X floatatom 688 234 5 0 0 0 - - -, f 5;
+#X text 753 233 <- 1 = true \, 0 = false;
+#X obj 688 196 !=;
+#X text 735 195 <- are the numbers not equal?;
+#X floatatom 266 348 5 0 0 0 - - -, f 5;
+#X floatatom 351 348 5 0 0 0 - - -, f 5;
+#X floatatom 266 437 5 0 0 0 - - -, f 5;
+#X text 331 435 <- 1 = true \, 0 = false;
+#X obj 266 399 >;
+#X text 323 398 <- is left input greater than right?;
+#X obj 232 330 cnv 5 650 5 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 209 501 cnv 5 650 5 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X floatatom 660 348 5 0 0 0 - - -, f 5;
+#X floatatom 744 348 5 0 0 0 - - -, f 5;
+#X floatatom 660 439 5 0 0 0 - - -, f 5;
+#X text 733 437 <- 1 = true \, 0 = false;
+#X obj 660 401 <;
+#X text 733 400 <- is left input less than right?;
+#X floatatom 182 531 5 0 0 0 - - -, f 5;
+#X floatatom 182 620 5 0 0 0 - - -, f 5;
+#X obj 182 582 mod 10;
+#X text 265 581 <- mod divides by argument and outputs remainder;
+#X floatatom 586 531 5 0 0 0 - - -, f 5;
+#X floatatom 586 620 5 0 0 0 - - -, f 5;
+#X obj 586 582 div 10;
+#X text 667 581 <- div divides by argument and outputs without remainder
+;
+#X text 235 233 <- 1 = true \, 0 = false;
+#N canvas 0 23 1440 566 measureCount 0;
+#X obj 301 157 metro 500;
+#X obj 268 107 tgl 30 0 empty empty Start-Stop 0 -6 0 8 -262144 -1
+-1 0 1;
+#X obj 428 199 + 1;
+#X floatatom 305 239 0 0 0 0 - - -;
+#X text 128 238 Total Beat Count;
+#X obj 286 289 div 4;
+#X obj 565 289 mod 4;
+#X floatatom 565 358 0 0 0 0 - - -;
+#X floatatom 286 358 0 0 0 0 - - -;
+#X obj 305 199 f 1;
+#X msg 534 140 1;
+#X obj 286 327 + 1;
+#X obj 565 327 + 1;
+#X text 582 140 Reset;
+#X text 175 357 Bar number;
+#X text 444 357 Beat Count;
+#X floatatom 913 160 0 0 0 0 - - -;
+#X text 675 159 How many beats per bar?;
+#X text 737 245 <- using div and mod for a 4/4 musical metronome (taken
+from the otherbinops-help.pd patch included in Pd-extended);
+#X connect 0 0 9 0;
+#X connect 1 0 0 0;
+#X connect 2 0 9 1;
+#X connect 3 0 5 0;
+#X connect 3 0 6 0;
+#X connect 5 0 11 0;
+#X connect 6 0 12 0;
+#X connect 9 0 2 0;
+#X connect 9 0 3 0;
+#X connect 10 0 9 1;
+#X connect 11 0 8 0;
+#X connect 12 0 7 0;
+#X connect 16 0 6 1;
+#X connect 16 0 5 1;
+#X restore 739 620 pd measureCount;
+#X text 371 70 RELATIONAL OPERATORS, f 21;
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 7 0 11 0;
+#X connect 8 0 11 1;
+#X connect 11 0 9 0;
+#X connect 13 0 17 0;
+#X connect 14 0 17 1;
+#X connect 17 0 15 0;
+#X connect 21 0 25 0;
+#X connect 22 0 25 1;
+#X connect 25 0 23 0;
+#X connect 27 0 29 0;
+#X connect 29 0 28 0;
+#X connect 31 0 33 0;
+#X connect 33 0 32 0;
+#X restore 432 182 pd relational;
