@@ -1,0 +1,39 @@
+#N canvas 326 78 799 412 10;
+#X obj 43 349 dac~;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array voice 88200 float 2;
+#X coords 0 1 88199 -1 400 140 1;
+#X restore 377 58 graph;
+#X obj 395 280 adc~;
+#X obj 395 333 tabwrite~ voice;
+#X obj 341 283 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 234 333 \; voice normalize;
+#X obj 43 240 vline~;
+#X obj 43 296 tabread4~ voice;
+#X obj 380 26 hsl 400 15 2 88197 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 255 274 line;
+#X obj 380 200 hsl 400 15 2 88197 0 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 0 1;
+#X text 12 5 manual control of audio parameters decoupling controls
+with vline, f 79;
+#X obj 43 186 pack f 60;
+#X text 558 365 adapted from Tom Erbe example;
+#X msg 115 186 0 \, 88200 2000;
+#X msg 207 185 88200 \, 0 2000;
+#X floatatom 94 126 10 0 0 0 - - -, f 10;
+#X connect 2 0 3 0;
+#X connect 4 0 3 0;
+#X connect 6 0 7 0;
+#X connect 7 0 0 0;
+#X connect 7 0 0 1;
+#X connect 8 0 12 0;
+#X connect 9 0 10 0;
+#X connect 12 0 6 0;
+#X connect 12 0 9 0;
+#X connect 14 0 6 0;
+#X connect 14 0 9 0;
+#X connect 15 0 6 0;
+#X connect 15 0 9 0;
+#X connect 16 0 12 1;

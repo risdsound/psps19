@@ -1,0 +1,25 @@
+#N canvas 447 23 1098 695 10;
+#X msg 615 152 start;
+#X msg 447 152 stop;
+#X obj 447 116 del 1000;
+#X obj 334 384 writesf~ 2;
+#X obj 689 185 osc~ 440;
+#X obj 334 97 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 334 141 savepanel;
+#X msg 334 192 open \$1;
+#X obj 447 76 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 501 152 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 0 0 3 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 2 0 9 0;
+#X connect 4 0 3 0;
+#X connect 4 0 3 1;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 3 0;
+#X connect 8 0 0 0;
+#X connect 8 0 2 0;

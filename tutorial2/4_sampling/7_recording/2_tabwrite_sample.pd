@@ -1,0 +1,59 @@
+#N canvas 431 28 938 624 10;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array largetable1 441000 float 2;
+#X coords 0 1 441000 -1 200 140 1;
+#X restore 654 183 graph;
+#X text 338 400 sampling from the microphone;
+#X obj 114 410 dac~;
+#X obj 114 108 t b b;
+#X obj 114 55 bng 15 250 50 0 empty empty play 17 7 0 9 -262144 -1
+-1;
+#X obj 114 282 tabread4~ largetable1;
+#X obj 114 236 vline~;
+#X floatatom 206 55 5 0 0 2 start - -, f 5;
+#X obj 215 204 pack f 0;
+#X obj 179 140 float;
+#X obj 114 172 +;
+#X obj 206 108 * 44.1;
+#X obj 516 346 adc~;
+#X obj 340 377 tabwrite~ largetable1;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array largetable2 441000 float 2;
+#X coords 0 1 441000 -1 200 140 1;
+#X restore 656 351 graph;
+#X obj 506 376 tabwrite~ largetable2;
+#X obj 341 324 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 507 325 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 309 237 set largetable2;
+#X msg 308 212 set largetable1;
+#X msg 175 529 \; largetable1 normalize \; largetable2 normalize;
+#X obj 350 346 adc~;
+#X msg 114 140 441000;
+#X obj 114 204 pack f 10000;
+#X obj 272 55 bng 15 250 50 0 empty empty stop 17 7 0 10 -262144 -1
+-1;
+#X text 9 4 table or soundfile playback: adapted from Tom Erbe example
+;
+#X connect 3 0 22 0;
+#X connect 3 1 9 0;
+#X connect 4 0 3 0;
+#X connect 5 0 2 0;
+#X connect 5 0 2 1;
+#X connect 6 0 5 0;
+#X connect 7 0 11 0;
+#X connect 8 0 6 0;
+#X connect 9 0 8 0;
+#X connect 9 0 10 1;
+#X connect 10 0 23 0;
+#X connect 11 0 9 1;
+#X connect 12 0 15 0;
+#X connect 16 0 13 0;
+#X connect 17 0 15 0;
+#X connect 18 0 5 0;
+#X connect 19 0 5 0;
+#X connect 21 0 13 0;
+#X connect 22 0 10 0;
+#X connect 23 0 6 0;
+#X connect 24 0 8 0;

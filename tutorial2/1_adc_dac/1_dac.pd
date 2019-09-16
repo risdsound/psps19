@@ -1,0 +1,32 @@
+#N canvas 317 23 960 684 10;
+#X text 100 328 ON;
+#X text 224 328 OFF;
+#X text 285 275 <-- click these;
+#X msg 85 267 \; pd dsp 1;
+#X msg 204 267 \; pd dsp 0;
+#X msg 164 122 \; pd dsp \$1;
+#X obj 164 83 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 54 61 This is a very common way to build the audio on/off inside
+your patch ->;
+#X text 41 197 These utilize messages that go directly to the Pd application.
+You do this by using a semicolon at the beginning of the message.;
+#X obj 546 150 dac~;
+#X obj 540 277 dac~ 1 2 3 4 5 6 7 8;
+#X text 527 84 by default \, the dac~ has two output channels for stereo
+sound;
+#X text 521 221 By listing numbers in the dac \, you can get more outputs
+(here there are 8 output channels). To do this you must have an approprate
+audio interface.;
+#X text 316 376 Here are the outputs for the Spatial Audio Studio;
+#X obj 322 423 dac~ 1 2 3 4 5 6 7 8 9 10 11 12;
+#X text 525 421 first \, bottom tier;
+#X obj 322 456 dac~ 13 14 15 16 17 18 19 20;
+#X text 525 455 second \, mid tier;
+#X obj 322 489 dac~ 21 22 23 24;
+#X text 525 489 third \, top tier;
+#X obj 322 522 dac~ 25;
+#X text 525 523 top overhead speaker;
+#X obj 322 555 dac~ 26 27 28 29;
+#X text 525 557 subwoofers;
+#X connect 6 0 5 0;

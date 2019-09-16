@@ -1,0 +1,43 @@
+#N canvas 243 23 1288 844 10;
+#X obj 192 42 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 416 315 \; ola /read ./sounds/bossdr550mk2/Snare1.wav;
+#X msg 399 109 \; ola /speed \$1;
+#X msg 416 350 \; ola /read ./sounds/bossdr550mk2/BassShort.wav;
+#X msg 416 386 \; ola /read ./sounds/bossdr550mk2/WoodBlock1.wav;
+#X msg 416 422 \; ola /read ./sounds/bossdr550mk2/HiHatCl1.wav;
+#X msg 416 458 \; ola /read ./sounds/bossdr550mk2/HiHatOp1.wav;
+#X msg 399 62 1;
+#X floatatom 399 87 5 0 0 0 - - -, f 5;
+#X obj 399 33 loadbang;
+#X text 397 149 speed setting is 1 for normal \, under 1 for faster
+\, over 1 for slower.;
+#X text 693 322 read from known file address;
+#X msg 401 182 \; ola /speed 0.5;
+#X msg 506 218 \; ola /speed 10;
+#X msg 506 180 \; ola /speed 0.2;
+#X obj 14 425 cnv 15 380 150 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 192 380 dac~;
+#X obj 40 338 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 40 362 \; pd dsp \$1;
+#X text 26 430 [6_sampleplay~];
+#X msg 416 279 \; ola /open;
+#X text 497 286 open window to select sample;
+#X text 28 445 A mono sound sample player triggered by a bang with
+setting for playback speed. Allows one to read from a known file location
+or to open a file via a selection window. Note: this will NOT play
+in reverse with a negative value for speed. Speed setting works opposite
+from how you might expect \, e.g. 2 is not twice as fast but rather
+is twice as long (reducing the speed). The instantiation argument is
+the address for sending parameter messages.;
+#X msg 401 217 \; ola /speed 2;
+#X obj 192 86 sampleplay~ ola;
+#X connect 0 0 24 0;
+#X connect 7 0 8 0;
+#X connect 8 0 2 0;
+#X connect 9 0 7 0;
+#X connect 17 0 18 0;
+#X connect 24 0 16 0;
+#X connect 24 0 16 1;

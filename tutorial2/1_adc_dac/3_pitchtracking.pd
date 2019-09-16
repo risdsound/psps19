@@ -1,0 +1,37 @@
+#N canvas 150 22 723 544 12;
+#X obj 158 20 adc~;
+#X obj 158 70 fiddle~ 1024;
+#X obj 220 215 mtof;
+#X obj 220 328 osc~;
+#X floatatom 220 114 5 0 0 0 - - -, f 5;
+#X msg 417 348 \; pd dsp \$1;
+#X obj 417 308 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X floatatom 220 240 5 0 0 0 - - -, f 5;
+#X obj 220 296 line~;
+#X obj 220 265 pack f 400;
+#X obj 220 356 *~ 0.5;
+#X obj 220 405 dac~;
+#X obj 220 182 + 0;
+#X floatatom 258 156 5 0 0 0 - - -, f 5;
+#X text 206 18 <- analog to digital converter... using channel 1;
+#X text 253 70 <- fiddle~ estimates the pitch;
+#X text 308 157 <- addition for offsetting the pitch if desired;
+#X text 272 215 <- mtof \, converts midi values to frequency in Hertz
+;
+#X text 272 111 <- MIDI note value of the incoming pitch;
+#X text 149 475 plug in headphones for best results! risk of feedback!
+;
+#X connect 0 0 1 0;
+#X connect 1 2 4 0;
+#X connect 2 0 7 0;
+#X connect 3 0 10 0;
+#X connect 4 0 12 0;
+#X connect 6 0 5 0;
+#X connect 7 0 9 0;
+#X connect 8 0 3 0;
+#X connect 9 0 8 0;
+#X connect 10 0 11 0;
+#X connect 10 0 11 1;
+#X connect 12 0 2 0;
+#X connect 13 0 12 1;

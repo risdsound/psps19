@@ -1,0 +1,47 @@
+#N canvas 320 23 640 684 10;
+#X obj 131 86 openpanel;
+#X msg 131 112 open \$1;
+#X obj 131 63 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 186 501 dac~;
+#X msg 23 407 \; pd dsp \$1;
+#X obj 23 384 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 45 380 <- turn on sound;
+#X obj 131 167 soundfiler;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array soundbuffer0 249193 float 2;
+#X coords 0 1 249193 -1 200 140 1;
+#X restore 367 84 graph;
+#X obj 186 437 *~ 0.7;
+#X floatatom 219 410 5 0 1 0 - - -, f 5;
+#X obj 53 143 print;
+#X msg 183 256 0;
+#X obj 339 314 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 306 339 spigot;
+#X text 368 313 <- turn on/off looping;
+#X text 259 23 Another \, simpler way to load and utilize sound files...
+but non-interpolating (thus could sound rougher);
+#X msg 131 139 read -resize \$1 soundbuffer0;
+#X obj 183 291 tabplay~ soundbuffer0;
+#X obj 306 314 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 183 229 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 0 0 1 0;
+#X connect 1 0 17 0;
+#X connect 1 0 11 0;
+#X connect 2 0 0 0;
+#X connect 5 0 4 0;
+#X connect 9 0 3 0;
+#X connect 9 0 3 1;
+#X connect 10 0 9 1;
+#X connect 12 0 18 0;
+#X connect 13 0 14 1;
+#X connect 14 0 20 0;
+#X connect 17 0 7 0;
+#X connect 18 0 9 0;
+#X connect 18 1 19 0;
+#X connect 19 0 14 0;
+#X connect 20 0 12 0;

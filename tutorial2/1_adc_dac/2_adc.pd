@@ -1,0 +1,11 @@
+#N canvas 320 23 960 684 10;
+#X obj 294 97 adc~;
+#X obj 154 188 adc~ 1 2 3 4 5 6 7 8;
+#X text 428 189 <- by default \, the adc~ has two inlets (for stereo
+input). It is possible to have many more inlets provided your audio
+device supports it. Here we see an adc~ with 8 inlets (or 8-channels).
+;
+#X text 365 94 <- just as we have a dac~ \, we also have an adc~ (Analog
+to Digital Converter). This allows us to take an an audio input (line
+or microphone input) and convert it into digital information that can
+be processed in Pd.;

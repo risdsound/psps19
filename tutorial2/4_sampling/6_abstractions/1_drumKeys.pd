@@ -1,0 +1,53 @@
+#N canvas 320 23 1280 684 10;
+#X obj 838 108 loadbang;
+#X obj 186 147 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 218 146 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 250 146 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 282 146 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 839 348 \; tp4 /read ./sounds/bossdr550mk2/HiHatCl1.wav \; tp4
+/speed 1 \; tp4 /vol 0.4;
+#X msg 839 288 \; tp3 /read ./sounds/bossdr550mk2/HiHatOp1.wav \; tp3
+/speed 0.9 \; tp3 /vol 0.5;
+#X msg 839 165 \; tp1 /read ./sounds/bossdr550mk2/HiHatCl2.wav \; tp1
+/speed 1 \; tp1 /vol 0.8;
+#X obj 839 129 t b b b b;
+#X obj 434 644 dac~;
+#X msg 78 455 \; pd dsp \$1;
+#X obj 78 416 tgl 30 0 empty empty dsp 33 7 0 10 -204786 -1 -1 0 1
+;
+#X obj 186 49 key;
+#X floatatom 186 77 5 0 0 0 - - -, f 5;
+#X obj 186 102 select 113 119 101 114;
+#X msg 839 227 \; tp2 /read ./sounds/bossdr550mk2/Kick3.wav \; tp2
+/speed 1 \; tp2 /vol 0.4;
+#X obj 434 552 +~;
+#X obj 186 266 triggerplay~ tp1;
+#X obj 342 266 triggerplay~ tp2;
+#X obj 498 266 triggerplay~ tp3;
+#X obj 654 266 triggerplay~ tp4;
+#X connect 0 0 8 0;
+#X connect 1 0 17 0;
+#X connect 2 0 18 0;
+#X connect 3 0 19 0;
+#X connect 4 0 20 0;
+#X connect 8 0 7 0;
+#X connect 8 1 15 0;
+#X connect 8 2 6 0;
+#X connect 8 3 5 0;
+#X connect 11 0 10 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 1 0;
+#X connect 14 1 2 0;
+#X connect 14 2 3 0;
+#X connect 14 3 4 0;
+#X connect 16 0 9 0;
+#X connect 16 0 9 1;
+#X connect 17 0 16 0;
+#X connect 18 0 16 1;
+#X connect 19 0 16 0;
+#X connect 20 0 16 1;
