@@ -1,0 +1,218 @@
+#N canvas 243 23 1288 844 10;
+#X text 940 218 read from known file address;
+#X obj 407 724 dac~;
+#X obj 28 47 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X msg 28 71 \; pd dsp \$1;
+#X text 744 34 open window to select sample;
+#X floatatom 51 196 5 0 0 0 - - -;
+#X floatatom 464 223 5 0 0 0 - - -;
+#X obj 321 42 clock;
+#X obj 307 314 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 327 314 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 347 314 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 367 314 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 313 625 *~;
+#X obj 351 427 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2000 1;
+#X obj 351 582 line~;
+#X msg 351 562 \$1 50;
+#X obj 418 624 *~;
+#X obj 456 426 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2100 1;
+#X obj 456 581 line~;
+#X msg 456 561 \$1 50;
+#X obj 413 376 sampleplay~ ola2;
+#X obj 308 377 sampleplay~ ola1;
+#X msg 663 211 \; ola1 /read ./sounds/bossdr550mk2/Snare1.wav;
+#X msg 663 246 \; ola2 /read ./sounds/bossdr550mk2/WoodBlock1.wav;
+#X obj 307 275 select 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16;
+#X obj 386 314 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 406 314 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 426 314 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 446 314 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 465 314 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 485 314 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 505 314 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 525 314 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 544 314 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 564 314 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 584 314 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 604 314 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 664 26 \; ola1 /open;
+#X msg 664 59 \; ola2 /open;
+#X obj 528 624 *~;
+#X obj 566 426 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2000 1;
+#X obj 566 581 line~;
+#X msg 566 561 \$1 50;
+#X obj 523 376 sampleplay~ ola3;
+#X msg 663 282 \; ola3 /read ./sounds/bossdr550mk2/HiHatCl1.wav;
+#X obj 170 324 &&, f 4;
+#X obj 75 253 == 4;
+#X obj 170 297 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 215 254 == 4;
+#X obj 191 297 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 170 348 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 170 374 sel 1;
+#X obj 128 778 *~;
+#X obj 166 580 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 8200 1;
+#X obj 166 735 line~;
+#X msg 166 715 \$1 50;
+#X obj 123 530 sampleplay~ ola4;
+#X obj 124 253 == 6;
+#X obj 170 253 == 8;
+#X obj 32 253 == 2;
+#X obj 321 12 select 9;
+#X obj 124 325 &&, f 4;
+#X obj 124 297 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 145 297 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 124 349 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 124 374 sel 1;
+#X obj 75 321 &&, f 4;
+#X obj 75 297 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 96 297 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 75 345 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 75 374 sel 1;
+#X obj 32 322 &&, f 4;
+#X obj 32 297 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 53 297 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 32 346 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 32 374 sel 1;
+#X msg 665 91 \; ola3 /open;
+#X msg 666 126 \; ola4 /open;
+#X msg 668 404 \; ola1 /speed \$1;
+#X floatatom 668 381 5 0 0 0 - - -;
+#X floatatom 669 441 5 0 0 0 - - -;
+#X floatatom 670 499 5 0 0 0 - - -;
+#X floatatom 671 562 5 0 0 0 - - -;
+#X msg 669 464 \; ola2 /speed \$1;
+#X msg 670 522 \; ola3 /speed \$1;
+#X msg 671 585 \; ola4 /speed \$1;
+#X msg 663 318 \; ola4 /read ./sounds/bossdr550mk2/Kick3.wav;
+#X connect 2 0 3 0;
+#X connect 5 0 46 0;
+#X connect 5 0 59 0;
+#X connect 5 0 57 0;
+#X connect 5 0 58 0;
+#X connect 5 0 60 0;
+#X connect 6 0 48 0;
+#X connect 6 0 24 0;
+#X connect 7 0 5 0;
+#X connect 7 1 6 0;
+#X connect 8 0 21 0;
+#X connect 9 0 21 0;
+#X connect 10 0 20 0;
+#X connect 11 0 43 0;
+#X connect 12 0 1 0;
+#X connect 12 0 1 1;
+#X connect 13 0 15 0;
+#X connect 14 0 12 1;
+#X connect 15 0 14 0;
+#X connect 16 0 1 0;
+#X connect 16 0 1 1;
+#X connect 17 0 19 0;
+#X connect 18 0 16 1;
+#X connect 19 0 18 0;
+#X connect 20 0 16 0;
+#X connect 21 0 12 0;
+#X connect 24 0 8 0;
+#X connect 24 1 9 0;
+#X connect 24 2 10 0;
+#X connect 24 3 11 0;
+#X connect 24 4 25 0;
+#X connect 24 5 26 0;
+#X connect 24 6 27 0;
+#X connect 24 7 28 0;
+#X connect 24 8 29 0;
+#X connect 24 9 30 0;
+#X connect 24 10 31 0;
+#X connect 24 11 32 0;
+#X connect 24 12 33 0;
+#X connect 24 13 34 0;
+#X connect 24 14 35 0;
+#X connect 24 15 36 0;
+#X connect 25 0 43 0;
+#X connect 26 0 20 0;
+#X connect 27 0 20 0;
+#X connect 28 0 20 0;
+#X connect 29 0 21 0;
+#X connect 30 0 43 0;
+#X connect 32 0 43 0;
+#X connect 34 0 43 0;
+#X connect 35 0 21 0;
+#X connect 36 0 20 0;
+#X connect 39 0 1 0;
+#X connect 39 0 1 1;
+#X connect 40 0 42 0;
+#X connect 41 0 39 1;
+#X connect 42 0 41 0;
+#X connect 43 0 39 0;
+#X connect 45 0 50 0;
+#X connect 46 0 67 0;
+#X connect 47 0 45 0;
+#X connect 48 0 49 0;
+#X connect 48 0 63 0;
+#X connect 48 0 68 0;
+#X connect 48 0 73 0;
+#X connect 49 0 45 1;
+#X connect 50 0 51 0;
+#X connect 51 0 56 0;
+#X connect 52 0 1 0;
+#X connect 52 0 1 1;
+#X connect 53 0 55 0;
+#X connect 54 0 52 1;
+#X connect 55 0 54 0;
+#X connect 56 0 52 0;
+#X connect 57 0 62 0;
+#X connect 58 0 47 0;
+#X connect 59 0 72 0;
+#X connect 60 0 7 0;
+#X connect 61 0 64 0;
+#X connect 62 0 61 0;
+#X connect 63 0 61 1;
+#X connect 64 0 65 0;
+#X connect 65 0 56 0;
+#X connect 66 0 69 0;
+#X connect 67 0 66 0;
+#X connect 68 0 66 1;
+#X connect 69 0 70 0;
+#X connect 70 0 56 0;
+#X connect 71 0 74 0;
+#X connect 72 0 71 0;
+#X connect 73 0 71 1;
+#X connect 74 0 75 0;
+#X connect 75 0 56 0;
+#X connect 79 0 78 0;
+#X connect 80 0 83 0;
+#X connect 81 0 84 0;
+#X connect 82 0 85 0;
