@@ -1,0 +1,43 @@
+#N canvas 248 23 1133 569 10;
+#X obj 127 218 *~;
+#N canvas 0 23 450 300 (subpatch) 0;
+#X array array_echo-left 100 float 0;
+#X coords 0 1 99 -1 200 140 1 0 0;
+#X restore 524 255 graph;
+#X obj 337 368 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 377 369 <- graph;
+#X obj 337 405 metro 50;
+#X obj 317 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 127 445 ps.dac-out~;
+#X obj 127 174 noise~;
+#X obj 317 161 ps.adsr~ env1;
+#X msg 472 75 \; env1 /attack 10 \; env1 /decay 40 \; env1 /sustain
+80 \; env1 /release 300 \;;
+#X obj 127 319 ps.echo~ ech1;
+#X msg 471 147 \; ech1 /wet 1 \; ech1 /ltime 500 \; ech1 /lfeedback
+0.7 \; ech1 /rtime 800 \; ech1 /rfeedback 0.6 \;;
+#N canvas 0 23 450 300 (subpatch) 0;
+#X array array_echo-right 100 float 0;
+#X coords 0 1 99 -1 200 140 1 0 0;
+#X restore 732 255 graph;
+#X obj 337 435 tabwrite~ array_echo-left;
+#X obj 339 461 tabwrite~ array_echo-right;
+#X obj 413 45 loadbang;
+#X obj 413 84 t b b;
+#X connect 0 0 10 0;
+#X connect 0 0 10 1;
+#X connect 2 0 4 0;
+#X connect 4 0 13 0;
+#X connect 4 0 14 0;
+#X connect 5 0 8 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 1;
+#X connect 10 0 6 0;
+#X connect 10 0 13 0;
+#X connect 10 1 6 1;
+#X connect 10 1 14 0;
+#X connect 15 0 16 0;
+#X connect 16 0 11 0;
+#X connect 16 1 9 0;
