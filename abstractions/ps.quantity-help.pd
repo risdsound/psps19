@@ -1,0 +1,108 @@
+#N canvas 248 63 1063 543 10;
+#X floatatom 221 323 5 0 0 0 - - -;
+#X obj 221 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 260 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 299 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 338 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 377 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 416 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 221 155 > 0.2;
+#X obj 260 155 > 0.2;
+#X obj 299 156 > 0.2;
+#X obj 338 156 > 0.2;
+#X obj 377 156 > 0.2;
+#X obj 416 156 > 0.2;
+#X floatatom 221 115 5 0 0 0 - - -;
+#X floatatom 260 115 5 0 0 0 - - -;
+#X floatatom 299 115 5 0 0 0 - - -;
+#X floatatom 338 115 5 0 0 0 - - -;
+#X floatatom 377 115 5 0 0 0 - - -;
+#X floatatom 416 115 5 0 0 0 - - -;
+#X floatatom 493 323 5 0 0 0 - - -;
+#X obj 493 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 532 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 571 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 610 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 649 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 688 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 493 155 > 0.2;
+#X obj 532 155 > 0.2;
+#X obj 571 156 > 0.2;
+#X obj 610 156 > 0.2;
+#X obj 649 156 > 0.2;
+#X obj 688 156 > 0.2;
+#X floatatom 493 115 5 0 0 0 - - -;
+#X floatatom 532 115 5 0 0 0 - - -;
+#X floatatom 571 115 5 0 0 0 - - -;
+#X floatatom 610 115 5 0 0 0 - - -;
+#X floatatom 649 115 5 0 0 0 - - -;
+#X floatatom 688 115 5 0 0 0 - - -;
+#X obj 221 385 f;
+#X obj 264 385 t b f;
+#X obj 221 417 +, f 5;
+#X floatatom 221 449 5 0 0 0 - - -;
+#X obj 33 13 cnv 15 380 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 47 32 Find out how many "on" states are active from 1 to 6
+;
+#X text 45 17 [ps.quantity];
+#X obj 221 283 ps.quantity, f 33;
+#X obj 493 283 ps.quantity, f 33;
+#X text 560 377 use two together to test for on states from 1 to 12
+;
+#X connect 0 0 38 0;
+#X connect 1 0 45 0;
+#X connect 2 0 45 1;
+#X connect 3 0 45 2;
+#X connect 4 0 45 3;
+#X connect 5 0 45 4;
+#X connect 6 0 45 5;
+#X connect 7 0 1 0;
+#X connect 8 0 2 0;
+#X connect 9 0 3 0;
+#X connect 10 0 4 0;
+#X connect 11 0 5 0;
+#X connect 12 0 6 0;
+#X connect 13 0 7 0;
+#X connect 14 0 8 0;
+#X connect 15 0 9 0;
+#X connect 16 0 10 0;
+#X connect 17 0 11 0;
+#X connect 18 0 12 0;
+#X connect 19 0 39 0;
+#X connect 20 0 46 0;
+#X connect 21 0 46 1;
+#X connect 22 0 46 2;
+#X connect 23 0 46 3;
+#X connect 24 0 46 4;
+#X connect 25 0 46 5;
+#X connect 26 0 20 0;
+#X connect 27 0 21 0;
+#X connect 28 0 22 0;
+#X connect 29 0 23 0;
+#X connect 30 0 24 0;
+#X connect 31 0 25 0;
+#X connect 32 0 26 0;
+#X connect 33 0 27 0;
+#X connect 34 0 28 0;
+#X connect 35 0 29 0;
+#X connect 36 0 30 0;
+#X connect 37 0 31 0;
+#X connect 38 0 40 0;
+#X connect 39 0 38 0;
+#X connect 39 1 40 1;
+#X connect 40 0 41 0;
+#X connect 45 0 0 0;
+#X connect 46 0 19 0;

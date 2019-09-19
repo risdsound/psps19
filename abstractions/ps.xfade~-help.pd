@@ -1,0 +1,28 @@
+#N canvas 263 211 680 461 10;
+#X msg 265 354 \; pd dsp 0;
+#X msg 330 354 \; pd dsp 1;
+#X obj 117 145 osc~ 440;
+#X obj 142 168 osc~ 880;
+#X floatatom 246 181 5 0 0 0 - - -;
+#X obj 117 370 dac~;
+#X obj 249 148 hsl 128 15 0 1 0 0 empty empty crossfader_ch1=0_ch2=1
+-2 -8 0 10 -262144 -1 -1 2700 1;
+#X floatatom 321 180 5 0 0 1 ramp/smoothing - -;
+#X obj 111 20 cnv 15 380 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 125 39 Equal power crossfader.;
+#X obj 117 319 *~ 0.2;
+#X text 123 24 [ps.xfade~];
+#X obj 117 280 ps.xfade~;
+#X msg 246 206 /xfade \$1;
+#X msg 324 205 /ramp \$1;
+#X connect 2 0 12 0;
+#X connect 3 0 12 1;
+#X connect 4 0 13 0;
+#X connect 6 0 4 0;
+#X connect 7 0 14 0;
+#X connect 10 0 5 0;
+#X connect 10 0 5 1;
+#X connect 12 0 10 0;
+#X connect 13 0 12 2;
+#X connect 14 0 12 2;

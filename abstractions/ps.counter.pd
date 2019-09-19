@@ -1,0 +1,76 @@
+#N canvas 204 133 1096 565 10;
+#X obj 498 186 + 1;
+#X obj 443 175 f 1;
+#X msg 469 126 1;
+#X obj 443 126 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 516 126 <- reset;
+#X obj 443 206 t f f;
+#X obj 443 20 inlet;
+#X obj 42 291 outlet;
+#X floatatom 107 143 5 0 0 1 scale - -;
+#X floatatom 107 164 5 0 0 1 offset - -;
+#X floatatom 107 228 5 0 0 1 countOut - -;
+#X obj 107 122 bng 15 250 50 0 empty empty reset 17 7 0 10 -262144
+-1 -1;
+#X obj 507 18 inlet;
+#X obj 547 18 r \$1;
+#X floatatom 443 311 5 0 0 0 - - -;
+#X obj 595 375 spigot;
+#X obj 107 186 tgl 15 0 empty empty loop 17 7 0 10 -262144 -1 -1 1
+1;
+#X floatatom 107 206 5 0 0 1 loopPoint - -;
+#X obj 595 429 >= 20;
+#X obj 595 454 select 1;
+#X obj 507 66 route /reset /scale /offset /loop /loopPoint;
+#X obj 443 234 * 1;
+#X obj 443 263 + 0;
+#X text 612 219 A basic counter made with addition plus scale \, offset
+\, and looping. Takes a bang input for the left inlet (e.g. use with
+metro).;
+#X obj 99 252 cnv 15 75 25 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 105 254 [s3g 2014];
+#X obj 210 23 loadbang;
+#X msg 210 79 1;
+#X msg 239 79 0;
+#X msg 270 79 1;
+#X obj 210 55 t b b b b;
+#X msg 301 79 10;
+#X connect 0 0 1 1;
+#X connect 1 0 5 0;
+#X connect 2 0 1 1;
+#X connect 3 0 1 0;
+#X connect 5 0 21 0;
+#X connect 5 1 0 0;
+#X connect 6 0 3 0;
+#X connect 8 0 21 1;
+#X connect 9 0 22 1;
+#X connect 10 0 7 0;
+#X connect 11 0 2 0;
+#X connect 12 0 20 0;
+#X connect 13 0 20 0;
+#X connect 14 0 15 0;
+#X connect 15 0 18 0;
+#X connect 16 0 15 1;
+#X connect 17 0 18 1;
+#X connect 18 0 19 0;
+#X connect 19 0 11 0;
+#X connect 20 0 11 0;
+#X connect 20 1 8 0;
+#X connect 20 2 9 0;
+#X connect 20 3 16 0;
+#X connect 20 4 17 0;
+#X connect 21 0 22 0;
+#X connect 22 0 10 0;
+#X connect 22 0 14 0;
+#X connect 26 0 30 0;
+#X connect 27 0 8 0;
+#X connect 28 0 9 0;
+#X connect 29 0 16 0;
+#X connect 30 0 27 0;
+#X connect 30 1 28 0;
+#X connect 30 2 29 0;
+#X connect 30 3 31 0;
+#X connect 31 0 17 0;
+#X coords 0 -1 1 1 100 150 1 100 100;
