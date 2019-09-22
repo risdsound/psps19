@@ -1,0 +1,65 @@
+#N canvas 320 23 960 684 10;
+#X obj 430 596 dac~;
+#X msg 49 230 \; pd dsp \$1;
+#X obj 49 177 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 86 178 <- turn on sound;
+#X obj 561 446 line~;
+#X obj 430 507 *~;
+#X obj 561 404 pack f 20;
+#X floatatom 561 371 5 0 0 0 - - -;
+#X obj 429 268 line~;
+#X floatatom 429 131 5 0 0 0 - - -;
+#X obj 432 80 hsl 200 30 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 6400 1;
+#X obj 429 180 * 1000;
+#X floatatom 536 180 5 0 0 0 - - -;
+#X text 643 79 <- hslider for a GUI;
+#X text 606 179 <- adjust the glide between freq.;
+#X obj 429 226 pack f 200;
+#X text 507 266 <- line~ enables signal control over the osc~ freq.
+;
+#X floatatom 657 372 5 0 0 0 - - -;
+#X text 725 373 <- adjust ramp for volume changes;
+#X text 629 444 <- line~ enables signal control over volume;
+#X obj 564 334 hsl 200 30 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 800 1;
+#X text 775 333 <- hslider for a GUI;
+#X obj 429 308 phasor~ 440;
+#X text 142 25 EVERYTHING THE SAME \, BUT CHANGING THE WAVEFORM TYPE
+TO SAW WAVE (phasor~);
+#N canvas 11 23 465 402 array_viz 1;
+#X obj 181 105 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array phas_array 100 float 0;
+#X coords 0 1 99 -1 200 140 1 0 0;
+#X restore 84 211 graph;
+#X text 205 104 graph;
+#X obj 181 74 metro 100;
+#X obj 59 66 inlet~;
+#X obj 181 12 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 181 148 tabwrite~ phas_array;
+#X connect 0 0 6 0;
+#X connect 3 0 0 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X restore 271 563 pd array_viz;
+#X text 113 562 visualize w/ array ->;
+#X connect 2 0 1 0;
+#X connect 4 0 5 1;
+#X connect 5 0 0 0;
+#X connect 5 0 0 1;
+#X connect 5 0 24 0;
+#X connect 6 0 4 0;
+#X connect 7 0 6 0;
+#X connect 8 0 22 0;
+#X connect 9 0 11 0;
+#X connect 10 0 9 0;
+#X connect 11 0 15 0;
+#X connect 12 0 15 1;
+#X connect 15 0 8 0;
+#X connect 17 0 6 1;
+#X connect 20 0 7 0;
+#X connect 22 0 5 0;

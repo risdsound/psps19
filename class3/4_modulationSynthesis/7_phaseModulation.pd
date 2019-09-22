@@ -1,0 +1,108 @@
+#N canvas 131 23 1289 609 10;
+#X obj 157 102 phasor~;
+#X obj 157 127 cos~;
+#X obj 533 447 dac~;
+#X floatatom 157 69 5 0 0 0 - - -, f 5;
+#X text 222 108 is equivalent to:;
+#X obj 345 107 osc~;
+#X obj 533 383 *~ 0.5;
+#X floatatom 345 72 5 0 0 0 - - -, f 5;
+#X obj 533 191 phasor~;
+#X floatatom 533 154 5 0 0 0 - - -, f 5;
+#X obj 533 281 +~;
+#X obj 625 191 osc~ 1;
+#X floatatom 625 154 5 0 0 0 - - -, f 5;
+#X obj 625 258 *~, f 19;
+#X obj 533 321 cos~;
+#X obj 736 214 line~;
+#X msg 736 191 \$1 50;
+#X floatatom 736 154 5 0 0 0 - - -, f 5;
+#X text 457 133 carrier frequency;
+#X text 632 115 modulation frequency;
+#X text 81 17 phase modulation is another way of describing frequency
+modulation;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array spectrum200 128 float 0;
+#X coords 0 500 128 0 256 130 1;
+#X restore 850 312 graph;
+#N canvas 204 22 358 238 fft 0;
+#X obj 46 48 inlet~;
+#X obj 159 145 inlet;
+#X obj 46 78 rfft~;
+#X obj 46 111 *~;
+#X obj 77 111 *~;
+#X obj 46 141 sqrt~;
+#X obj 191 45 block~ 1024 1;
+#X obj 159 181 tabwrite~ spectrum200;
+#X connect 0 0 2 0;
+#X connect 1 0 7 0;
+#X connect 2 0 3 0;
+#X connect 2 0 3 1;
+#X connect 2 1 4 0;
+#X connect 2 1 4 1;
+#X connect 3 0 5 0;
+#X connect 4 0 5 0;
+#X connect 5 0 7 0;
+#X restore 697 495 pd fft;
+#X obj 760 364 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 760 409 metro 50;
+#X msg 614 19 1;
+#X obj 626 91 * 1;
+#X msg 654 19 2;
+#X msg 692 19 3;
+#X msg 732 19 4;
+#X msg 765 19 5;
+#X msg 805 19 6;
+#X msg 793 163 1;
+#X obj 614 58 t b f;
+#X text 733 133 modulation index (amplitude of modulator);
+#X text 81 199 from Kreidler's Pd tutorial: A special situation arises
+when the modulation frequency is a whole number multiple of the carrier
+frequency (i.e. \, 1x \, 2x \, 3x \, 4x \, 5x \, 6x \, etc.). The other
+tones above the carrier frequency would also be whole number multiples
+of the carrier frequency - i.e. \, its overtones. Furthermore negative
+frequencies are mirrored above in the positive range. In the special
+situation mentioned in the previous paragraph \, these are covered
+by "normal" frequencies. Let's say you have a carrier frequency of
+200 Hz and a modulator frequency of 100 Hz \; coverings occur starting
+with the third undertone (which is also 100 Hz and the following 200
+\, 300 \, etc.) \, which result in amplifications and suppressions
+according to phase length. The advantage of FM synthesis over additive
+synthesis (the simple addition of sine waves) is that you only need
+two oscillators to make a rich and complex sound (you just have to
+change the frequency and especially the amplitude of the modulator!).
+A typical FM synthesis sound is a 'disharmonic spectrum' \, i.e. \,
+a quasi-spectrum above the fundamental with distorted overtones that
+are not whole number multiples of the fundamental. Some metallic instruments
+\, like bells and gongs \, exhibit similar spectra \; sounds made using
+FM synthesis often have a 'metallic' timbre for this reason.;
+#X connect 0 0 1 0;
+#X connect 3 0 0 0;
+#X connect 6 0 2 0;
+#X connect 6 0 2 1;
+#X connect 7 0 5 0;
+#X connect 8 0 10 0;
+#X connect 9 0 8 0;
+#X connect 9 0 26 0;
+#X connect 10 0 14 0;
+#X connect 11 0 13 0;
+#X connect 12 0 11 0;
+#X connect 13 0 10 1;
+#X connect 14 0 6 0;
+#X connect 14 0 22 0;
+#X connect 15 0 13 1;
+#X connect 16 0 15 0;
+#X connect 17 0 16 0;
+#X connect 23 0 24 0;
+#X connect 24 0 22 1;
+#X connect 25 0 33 0;
+#X connect 26 0 12 0;
+#X connect 27 0 33 0;
+#X connect 28 0 33 0;
+#X connect 29 0 33 0;
+#X connect 30 0 33 0;
+#X connect 31 0 33 0;
+#X connect 32 0 17 0;
+#X connect 33 0 9 0;
+#X connect 33 1 26 1;

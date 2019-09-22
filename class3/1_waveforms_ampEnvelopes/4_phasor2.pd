@@ -1,0 +1,78 @@
+#N canvas 320 23 1096 812 10;
+#X obj 546 637 dac~;
+#X msg 231 298 \; pd dsp \$1;
+#X obj 231 245 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 268 246 <- turn on sound;
+#X obj 764 460 line~;
+#X obj 546 548 *~;
+#X obj 764 418 pack f 20;
+#X floatatom 764 385 5 0 0 0 - - -;
+#X obj 546 309 line~;
+#X floatatom 546 172 5 0 0 0 - - -;
+#X obj 549 121 hsl 200 30 0 1 0 0 empty empty frequency -2 -10 0 12
+-262144 -1 -1 0 1;
+#X obj 546 221 * 1000;
+#X floatatom 653 221 5 0 0 1 glide - -;
+#X obj 546 267 pack f 200;
+#X floatatom 860 386 5 0 0 1 ramp - -;
+#X obj 767 348 hsl 200 30 0 1 0 0 empty empty gain -2 -10 0 12 -262144
+-1 -1 0 1;
+#X obj 546 349 phasor~ 440;
+#X obj 546 375 *~ 2;
+#X obj 546 401 -~ 1;
+#X text 180 139 GETTING OTHER WAVEFORM TYPES - A stronger phasor~ \;
+A phasor~ moves between 0 and 1 \; By multiplying by 2 and substracting
+by 1 we scale the phasor~ to move between -1 and 1;
+#N canvas 11 23 465 402 array_viz 1;
+#X obj 181 105 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array phas2_array 100 float 0;
+#X coords 0 1 99 -1 200 140 1 0 0;
+#X restore 84 211 graph;
+#X text 205 104 graph;
+#X obj 181 74 metro 100;
+#X obj 59 66 inlet~;
+#X obj 181 12 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 181 148 tabwrite~ phas2_array;
+#X connect 0 0 6 0;
+#X connect 3 0 0 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X restore 424 595 pd array_viz;
+#X text 266 594 visualize w/ array ->;
+#X obj 447 347 ps.saw~;
+#X obj 447 412 *~ 0, f 5;
+#X msg 503 383 0;
+#X msg 603 433 0;
+#X msg 474 383 0.5;
+#X msg 573 433 0.5;
+#X obj 546 462 *~ 0.5;
+#X connect 2 0 1 0;
+#X connect 4 0 5 1;
+#X connect 5 0 0 0;
+#X connect 5 0 0 1;
+#X connect 5 0 20 0;
+#X connect 6 0 4 0;
+#X connect 7 0 6 0;
+#X connect 8 0 16 0;
+#X connect 8 0 22 0;
+#X connect 9 0 11 0;
+#X connect 10 0 9 0;
+#X connect 11 0 13 0;
+#X connect 12 0 13 1;
+#X connect 13 0 8 0;
+#X connect 14 0 6 1;
+#X connect 15 0 7 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 18 0 28 0;
+#X connect 22 0 23 0;
+#X connect 23 0 5 0;
+#X connect 24 0 23 1;
+#X connect 25 0 28 1;
+#X connect 26 0 23 1;
+#X connect 27 0 28 1;
+#X connect 28 0 5 0;

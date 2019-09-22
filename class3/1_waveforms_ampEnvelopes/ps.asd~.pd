@@ -1,0 +1,30 @@
+#N canvas 274 23 764 436 10;
+#X obj 331 235 delay 50;
+#X obj 100 336 line~;
+#X obj 100 384 outlet~;
+#X obj 318 84 inlet;
+#X obj 382 269 pack 0 50;
+#X obj 182 264 pack 1 50;
+#X obj 372 83 r \$1;
+#X obj 319 141 route /attack /sustain /decay /trigger;
+#X obj 487 176 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 67 131 t b b;
+#X obj 102 72 inlet;
+#X obj 102 99 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 4 0;
+#X connect 1 0 2 0;
+#X connect 3 0 7 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 1;
+#X connect 7 1 0 1;
+#X connect 7 2 4 1;
+#X connect 7 3 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 0 0;
+#X connect 9 1 5 0;
+#X connect 10 0 11 0;
+#X connect 11 0 9 0;

@@ -1,0 +1,34 @@
+#N canvas 320 23 960 684 10;
+#X obj 241 416 dac~;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array array_asd 44100 float 0;
+#X coords 0 1 44099 -1 200 140 1 0 0;
+#X restore 577 223 graph;
+#X msg 168 405 \; pd dsp \$1;
+#X obj 168 357 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 137 179 osc~ 330;
+#X obj 255 270 line~;
+#X obj 449 344 tabwrite~ array_asd;
+#X obj 240 324 *~;
+#X text 220 88 ramp up (Attack to Sustain);
+#X text 399 88 ramp down (Sustain to Decay);
+#X text 299 269 <- create amplitude envelope;
+#X obj 240 356 *~ 0.2;
+#X text 60 56 Envelope generator Attack Sustain Decay;
+#X obj 520 292 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 221 110 0 \, 0.75 500;
+#X msg 401 110 0.75 \, 0 500;
+#X connect 3 0 2 0;
+#X connect 4 0 7 0;
+#X connect 5 0 7 1;
+#X connect 5 0 6 0;
+#X connect 7 0 11 0;
+#X connect 11 0 0 0;
+#X connect 11 0 0 1;
+#X connect 13 0 6 0;
+#X connect 14 0 13 0;
+#X connect 14 0 5 0;
+#X connect 15 0 13 0;
+#X connect 15 0 5 0;
