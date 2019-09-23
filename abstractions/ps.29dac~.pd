@@ -1,4 +1,4 @@
-#N canvas 587 216 1973 776 12;
+#N canvas 52 23 1680 776 12;
 #X obj 148 597 dac~ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19
 20 21 22 23 24 25 26 27 28 29, f 130;
 #X floatatom 1442 418 5 0 0 0 - - -;
@@ -32,7 +32,7 @@
 #X obj 1448 251 inlet~;
 #X obj 1498 251 inlet~;
 #X obj 1548 251 inlet~;
-#N canvas 428 91 2076 647 clip_filter_trim_25_genelec_8050b 0;
+#N canvas 0 82 1680 647 clip_filter_trim_25_genelec_8050b 0;
 #X obj 47 373 clip~ -1 1;
 #X obj 47 317 *~ 0.1;
 #X obj 47 287 *~;
@@ -407,6 +407,12 @@
 1;
 #X obj 113 45 tgl 20 0 empty empty 4_subs 23 7 0 10 -262144 -1 -1 0
 1;
+#X obj 343 25 bng 40 250 50 0 empty empty panic 42 7 0 10 -258113 -262144
+-258113;
+#X msg 444 114 0;
+#X msg 212 135 \; pd dsp \$1;
+#X obj 274 25 tgl 40 0 empty empty dsp 42 7 0 10 -262144 -1 -1 0 1
+;
 #X connect 1 0 33 4;
 #X connect 2 0 32 25;
 #X connect 3 0 32 0;
@@ -469,4 +475,9 @@
 #X connect 33 3 0 28;
 #X connect 34 0 2 0;
 #X connect 35 0 1 0;
+#X connect 36 0 37 0;
+#X connect 37 0 35 0;
+#X connect 37 0 34 0;
+#X connect 37 0 39 0;
+#X connect 39 0 38 0;
 #X coords 0 -1 1 1 400 50 1 20 20;
