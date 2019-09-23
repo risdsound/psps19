@@ -1,0 +1,31 @@
+#N canvas 321 92 1030 625 12;
+#X declare -path psps;
+#X declare -path testlib;
+#X declare -path cyclone;
+#X obj 80 37 declare -path psps;
+#X obj 63 118 ps.tri~;
+#X obj 150 119 ps.measures;
+#X text 546 156 Then use the [declare] object to specify a folder of
+abstractions (a "library"). It's very helpful to use declare if relying
+on libraries \, so that you remember they are needed for your patch
+to work \, and it also tells others these are required.;
+#X text 516 45 On a Mac \, when Pd was installed it should have created
+a directory called "Pd" in your Documents folder. We'll confirm where
+this is on Windows in class. You can add new main folder paths by choosing
+the menu item: Pd > Preferences > Path. In this way \, you can load
+abstractions into any Pd patch you are working on.;
+#X text 16 65 I made a folder called "psps" in my Documents/Pd folder
+and have these abstractions inside.;
+#X text 462 266 To ensure compatibility for others \, copy your abstractions
+to the same folder as your patch. If using a subfolder to organize
+these \, then still use the [declare] object.;
+#X obj 43 344 declare -path testlib;
+#X obj 101 387 tester;
+#X text 20 299 Here I made a subfolder called "testlib" in the same
+folder as this patch.;
+#X obj 257 452 declare -path cyclone;
+#X obj 323 489 counter;
+#X text 429 445 This is an "external" library I downloaded to the path:
+Documents/Pd using the menu Help > Find externals. Note that the use
+of external libraries won't work when we run Pd patches on mobile devices
+in a few weeks.;

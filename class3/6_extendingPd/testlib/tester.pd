@@ -1,0 +1,8 @@
+#N canvas 0 23 653 326 12;
+#X text 112 66 testing 1 \, 2 \, 3;
+#X obj 297 52 inlet;
+#X obj 317 165 outlet;
+#X obj 405 54 inlet~;
+#X obj 425 167 outlet~;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
