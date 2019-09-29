@@ -1,0 +1,4 @@
+These samples were prepared by Billy Stiltner who adapted them from originals found here:
+http://www.hornet.org/cgi-bin/scene-search.cgi?search=Soundwave (no longer an active page). These were included in a download of his “bsample” Pure Data patch, 
+last seen here: https://sites.google.com/site/billystiltner/
+

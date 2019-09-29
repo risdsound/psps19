@@ -1,0 +1,35 @@
+#N canvas 181 23 760 521 10;
+#X obj 127 229 *~;
+#N canvas 0 23 450 300 (subpatch) 0;
+#X array array_verb 100 float 0;
+#X coords 0 1 99 -1 200 140 1 0 0;
+#X restore 486 289 graph;
+#X obj 337 368 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 377 369 <- graph;
+#X obj 337 405 metro 50;
+#X obj 337 436 tabwrite~ array_verb;
+#X obj 127 159 noise~;
+#X obj 318 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 413 45 loadbang;
+#X obj 413 84 t b b;
+#X obj 318 161 ps.adsr~ env3;
+#X msg 472 75 \; env3 /attack 10 \; env3 /decay 40 \; env3 /sustain
+80 \; env3 /release 300 \;;
+#X obj 127 445 ps.dac-out~;
+#X obj 126 261 ps.reverb~ rev1;
+#X msg 468 146 \; rev1 /roomsize 0.8 \; rev1 /damp 0.6 \; rev1 /dry
+0.24 \; rev1 /wet 0.5 \;;
+#X connect 0 0 13 0;
+#X connect 0 0 13 1;
+#X connect 2 0 4 0;
+#X connect 4 0 5 0;
+#X connect 6 0 0 0;
+#X connect 7 0 10 0;
+#X connect 8 0 9 0;
+#X connect 9 1 11 0;
+#X connect 10 0 0 1;
+#X connect 13 0 12 0;
+#X connect 13 1 12 1;
+#X connect 13 1 5 0;

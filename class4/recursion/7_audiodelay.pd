@@ -1,0 +1,30 @@
+#N canvas 441 130 1065 569 10;
+#X obj 192 51 adc~;
+#X obj 106 423 dac~, f 46;
+#X obj 106 261 *~ 0.5;
+#X obj 106 327 *~;
+#X obj 121 305 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 376 77 delwrite~ allows you to store an audio signal for reading
+\; the first argument is the name to associate with a delread~ and
+the second in the amount of audio stored which automatically loops
+(when 5000 ms is filled in this example it overwrites starting from
+the beginning).;
+#X obj 192 83 delwrite~ stor 5000;
+#X obj 106 204 vd~ stor;
+#X text 149 173 signal input (delay time in ms);
+#X obj 106 175 line~;
+#X msg 106 146 \$1 1000;
+#X floatatom 106 121 5 0 0 0 - - -, f 5;
+#X text 376 193 vd~ for variable delay does a better job of reading
+from a delwrite~ by using interpolation. In the latest version of Pd
+there the same object has the name delread4~;
+#X connect 0 0 6 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 3 0 1 1;
+#X connect 4 0 3 1;
+#X connect 7 0 2 0;
+#X connect 9 0 7 0;
+#X connect 10 0 9 0;
+#X connect 11 0 10 0;

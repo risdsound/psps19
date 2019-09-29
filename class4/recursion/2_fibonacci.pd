@@ -1,0 +1,50 @@
+#N canvas 284 25 951 688 10;
+#X obj 98 71 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 97 154 1;
+#X msg 146 153 0;
+#X obj 98 103 t b b;
+#X obj 220 323 f;
+#X obj 220 378 +, f 9;
+#X floatatom 220 427 30 0 0 0 - - -, f 30;
+#X obj 236 65 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 236 97 t b b b b, f 16;
+#X obj 258 257 f, f 11;
+#X obj 321 230 f;
+#X obj 321 177 f;
+#X obj 220 466 print;
+#X text 434 208 Fibonacci numbers are characterized by the fact that
+\, every number after the first two is the sum of the two preceding
+ones:;
+#X text 101 34 initialize;
+#X text 223 34 next in series;
+#X obj 271 466 s series;
+#X obj 336 205 r series;
+#X obj 336 149 r series;
+#X text 334 463 < this is the recurssion;
+#X floatatom 235 288 5 0 0 0 - - -, f 5;
+#X floatatom 220 350 5 0 0 0 - - -, f 5;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 2 0 6 0;
+#X connect 2 0 11 0;
+#X connect 3 0 1 0;
+#X connect 3 1 2 0;
+#X connect 4 0 21 0;
+#X connect 5 0 6 0;
+#X connect 6 0 12 0;
+#X connect 6 0 16 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 8 1 4 0;
+#X connect 8 2 11 0;
+#X connect 8 3 11 0;
+#X connect 9 0 20 0;
+#X connect 10 0 9 1;
+#X connect 11 0 10 0;
+#X connect 11 0 5 1;
+#X connect 17 0 10 1;
+#X connect 18 0 11 1;
+#X connect 20 0 4 1;
+#X connect 21 0 5 0;

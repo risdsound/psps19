@@ -1,0 +1,13 @@
+#N canvas 396 200 616 461 10;
+#X floatatom 227 192 5 0 0 0 - - -;
+#X msg 269 71 10 2 44 20;
+#X msg 350 82 10 10 10 10;
+#X msg 110 69 10 100 1 2;
+#X msg 187 69 50 66 22 18;
+#X obj 227 142 ps.avg4;
+#X text 312 152 find the average of four numbers;
+#X connect 1 0 5 0;
+#X connect 2 0 5 0;
+#X connect 3 0 5 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;

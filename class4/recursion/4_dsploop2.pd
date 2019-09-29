@@ -1,0 +1,16 @@
+#N canvas 190 156 450 300 10;
+#X obj 135 132 osc~ 400;
+#X obj 135 37 delread~ ya 10;
+#X text 290 154 YES!;
+#X obj 85 269 dac~;
+#X obj 176 234 delwrite~ ya 20;
+#X obj 135 162 *~ 0.7;
+#X obj 77 218 *~ 0.1;
+#X obj 135 65 *~ 600, f 9;
+#X connect 0 0 5 0;
+#X connect 1 0 7 0;
+#X connect 5 0 4 0;
+#X connect 5 0 6 0;
+#X connect 6 0 3 0;
+#X connect 6 0 3 1;
+#X connect 7 0 0 0;

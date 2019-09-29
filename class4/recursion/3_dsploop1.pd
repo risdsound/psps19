@@ -1,0 +1,8 @@
+#N canvas 536 54 450 300 10;
+#X obj 135 132 osc~ 400;
+#X obj 135 182 *~ 0.9;
+#X text 290 154 NO!;
+#X obj 248 67 *~ 600, f 9;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 3 0 0 0;
