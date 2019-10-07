@@ -1,37 +1,37 @@
-#N canvas 1230 139 1002 640 10;
-#X obj 353 40 cnv 15 380 60 empty empty empty 20 12 0 14 -262130 -66577
+#N canvas 678 139 1002 640 10;
+#X obj 408 13 cnv 15 380 60 empty empty empty 20 12 0 14 -262130 -66577
 0;
-#X text 367 59 Cos-sin law panner. The instantiation argument is the
+#X text 422 32 Cos-sin law panner. The instantiation argument is the
 address for sending parameter messages.;
-#X obj 34 269 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 89 242 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X msg 34 294 \; pd dsp \$1;
-#X obj 383 398 vu 15 80 empty empty -1 -8 0 7 -66577 -1 1 0;
-#X obj 382 348 env~;
-#X obj 382 372 - 100;
-#X obj 439 399 vu 15 80 empty empty -1 -8 0 7 -66577 -1 1 0;
-#X obj 438 349 env~;
-#X obj 438 373 - 100;
-#X obj 493 398 vu 15 80 empty empty -1 -8 0 7 -66577 -1 1 0;
-#X obj 492 348 env~;
-#X obj 492 372 - 100;
-#X obj 549 399 vu 15 80 empty empty -1 -8 0 7 -66577 -1 1 0;
-#X obj 548 349 env~;
-#X obj 548 373 - 100;
-#X msg 658 371 \; p1 /x \$1;
-#X msg 821 430 \; p1 /y \$1;
-#X floatatom 658 341 5 0 0 0 - - -;
-#X floatatom 821 408 5 0 0 0 - - -;
-#X obj 661 251 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+#X msg 89 267 \; pd dsp \$1;
+#X obj 438 371 vu 15 80 empty empty -1 -8 0 7 -66577 -1 1 0;
+#X obj 437 321 env~;
+#X obj 437 345 - 100;
+#X obj 494 372 vu 15 80 empty empty -1 -8 0 7 -66577 -1 1 0;
+#X obj 493 322 env~;
+#X obj 493 346 - 100;
+#X obj 548 371 vu 15 80 empty empty -1 -8 0 7 -66577 -1 1 0;
+#X obj 547 321 env~;
+#X obj 547 345 - 100;
+#X obj 604 372 vu 15 80 empty empty -1 -8 0 7 -66577 -1 1 0;
+#X obj 603 322 env~;
+#X obj 603 346 - 100;
+#X msg 713 344 \; p1 /x \$1;
+#X msg 876 403 \; p1 /y \$1;
+#X floatatom 713 314 5 0 0 0 - - -;
+#X floatatom 876 381 5 0 0 0 - - -;
+#X obj 716 224 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 821 247 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+#X obj 876 220 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 131 329 dac~ 1 2 3 4;
-#X obj 176 153 ps.4pan~ p1;
-#X obj 821 381 ps.!- 1;
-#X obj 176 126 *~ 0.05;
-#X obj 176 97 noise~;
-#X text 365 44 [ps.4pan~];
+#X obj 231 126 ps.4pan~ p1;
+#X obj 876 354 ps.!- 1;
+#X obj 231 99 *~ 0.05;
+#X obj 231 70 noise~;
+#X text 420 17 [ps.4pan~];
+#X obj 27 375 ps.29dac~;
 #X connect 2 0 3 0;
 #X connect 5 0 6 0;
 #X connect 6 0 4 0;
@@ -44,15 +44,15 @@ address for sending parameter messages.;
 #X connect 18 0 16 0;
 #X connect 19 0 17 0;
 #X connect 20 0 18 0;
-#X connect 21 0 24 0;
-#X connect 23 0 5 0;
-#X connect 23 0 22 0;
-#X connect 23 1 8 0;
-#X connect 23 1 22 1;
-#X connect 23 2 11 0;
-#X connect 23 2 22 2;
-#X connect 23 3 14 0;
-#X connect 23 3 22 3;
-#X connect 24 0 19 0;
-#X connect 25 0 23 0;
-#X connect 26 0 25 0;
+#X connect 21 0 23 0;
+#X connect 22 0 5 0;
+#X connect 22 0 27 13;
+#X connect 22 1 8 0;
+#X connect 22 1 27 14;
+#X connect 22 2 11 0;
+#X connect 22 2 27 15;
+#X connect 22 3 14 0;
+#X connect 22 3 27 12;
+#X connect 23 0 19 0;
+#X connect 24 0 22 0;
+#X connect 25 0 24 0;

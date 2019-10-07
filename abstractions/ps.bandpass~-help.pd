@@ -1,0 +1,13 @@
+#N canvas 236 118 450 449 12;
+#X obj 151 128 ps.bandpass~;
+#X obj 150 74 noise~;
+#X obj 155 230 *~ 0.4;
+#X obj 155 296 dac~;
+#X floatatom 257 47 5 0 0 1 frequency - -;
+#X floatatom 289 81 5 0 0 1 Q - -;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 2 0 3 1;
+#X connect 4 0 0 1;
+#X connect 5 0 0 2;

@@ -1,10 +1,10 @@
-#N canvas 181 23 760 521 10;
+#N canvas 231 35 760 521 10;
 #X obj 127 271 *~;
 #N canvas 0 23 450 300 (subpatch) 0;
 #X array array_trem 100 float 0;
 #X coords 0 1 99 -1 200 140 1 0 0;
 #X restore 486 289 graph;
-#X obj 338 342 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 338 342 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X text 378 343 <- graph;
 #X obj 338 379 metro 50;
@@ -17,7 +17,7 @@
 #X obj 127 159 phasor~ 300;
 #X msg 256 278 /rate \$1;
 #X floatatom 258 220 5 0 0 1 frequency - -;
-#X floatatom 328 250 5 0 0 1 percent - -;
+#X floatatom 328 250 5 0 100 1 percent - -;
 #X msg 326 276 /amount \$1;
 #X connect 0 0 8 0;
 #X connect 2 0 4 0;

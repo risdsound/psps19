@@ -1,0 +1,12 @@
+#N canvas 746 150 793 644 10;
+#X obj 124 145 ctlout 63;
+#X obj 188 145 ctlout 64;
+#X obj 127 82 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 191 110 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 138 254 Note: not all digital pins can be PWM \, see your Teensy
+LC chart for which can be set. These should be D3 \, D4 \, D6 \, D9
+\, D10 \, D16 \, D17 \, D20 \, D22 \, D23;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
