@@ -60,9 +60,9 @@ void HandleCC(byte channel, byte number, byte value) {
 
   // D4 
   
-  if (number == 64) {
-    analogWrite(4, value * 2);
-  }
+//  if (number == 64) {
+//    analogWrite(4, value * 2);
+//  }
 
 }
 
@@ -72,7 +72,7 @@ void setup() {
   //  pinMode(1, INPUT_PULLUP);
   //  pinMode(2, INPUT_PULLUP);
   pinMode(3, OUTPUT);
-  pinMode(4, OUTPUT);
+//  pinMode(4, OUTPUT);
   //  pinMode(5, INPUT_PULLUP);
   //  pinMode(6, INPUT_PULLUP);
   //  pinMode(7, INPUT_PULLUP);

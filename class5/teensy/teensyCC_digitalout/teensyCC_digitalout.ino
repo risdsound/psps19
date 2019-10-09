@@ -56,27 +56,27 @@ void ccled (byte channel, byte number, byte value) {
 
   // D0
 
-  if (number == 60 && value == 127) {
-    digitalWrite(0, HIGH);
-  } else if (number == 60 && value == 0) {
-    digitalWrite(0, LOW);
-  }
+//  if (number == 60 && value == 127) {
+//    digitalWrite(0, HIGH);
+//  } else if (number == 60 && value == 0) {
+//    digitalWrite(0, LOW);
+//  }
 
   //D1
 
-  if (number == 61 && value == 127) {
-    digitalWrite(1, HIGH);
-  } else if (number == 61 && value == 0) {
-    digitalWrite(1, LOW);
-  }
+//  if (number == 61 && value == 127) {
+//    digitalWrite(1, HIGH);
+//  } else if (number == 61 && value == 0) {
+//    digitalWrite(1, LOW);
+//  }
 
   // D2
 
-  if (number == 62 && value == 127) {
-    digitalWrite(2, HIGH);
-  } else if (number == 62 && value == 0) {
-    digitalWrite(2, LOW);
-  }
+//  if (number == 62 && value == 127) {
+//    digitalWrite(2, HIGH);
+//  } else if (number == 62 && value == 0) {
+//    digitalWrite(2, LOW);
+//  }
 
   // D3
 
@@ -88,29 +88,30 @@ void ccled (byte channel, byte number, byte value) {
 
   // D4
 
-  if (number == 64 && value == 127) {
-    digitalWrite(4, HIGH);
-  } else if (number == 64 && value == 0) {
-    digitalWrite(4, LOW);
-  }
+//  if (number == 64 && value == 127) {
+//    digitalWrite(4, HIGH);
+//  } else if (number == 64 && value == 0) {
+//    digitalWrite(4, LOW);
+//  }
 
   // D5
 
-  if (number == 65 && value == 127) {
-    digitalWrite(5, HIGH);
-  } else if (number == 65 && value == 0) {
-    digitalWrite(5, LOW);
-  }
+//  if (number == 65 && value == 127) {
+//    digitalWrite(5, HIGH);
+//  } else if (number == 65 && value == 0) {
+//    digitalWrite(5, LOW);
+//  }
+
 }
 
 
 void setup() {
-  pinMode(0, OUTPUT);
-  pinMode(1, OUTPUT);
-  pinMode(2, OUTPUT);
+//  pinMode(0, OUTPUT);
+//  pinMode(1, OUTPUT);
+//  pinMode(2, OUTPUT);
   pinMode(3, OUTPUT);
-  pinMode(4, OUTPUT);
-  pinMode(5, OUTPUT);
+//  pinMode(4, OUTPUT);
+//  pinMode(5, OUTPUT);
   //  pinMode(6, INPUT_PULLUP);
   //  pinMode(7, INPUT_PULLUP);
   //  pinMode(8, INPUT_PULLUP);
