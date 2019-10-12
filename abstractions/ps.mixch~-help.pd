@@ -1,0 +1,24 @@
+#N canvas 231 23 1059 891 10;
+#X obj 476 243 loadbang;
+#X obj 476 268 t b b b;
+#X msg 577 388 \; m1 /mute 1;
+#X msg 577 423 \; m1 /mute 0;
+#X obj 377 79 cnv 15 380 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 391 98 Mixer channel with volume \, pan \, and EQ. The instantiation
+argument is the address for sending parameter messages.;
+#X obj 152 634 dac~;
+#X msg 43 623 \; pd dsp \$1;
+#X obj 43 592 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 119 140 noise~;
+#X obj 119 211 ps.mixch~ m1;
+#X msg 577 302 \; m1 /hi 0.5 \; m1 /mid 0.5 \; m1 /lo 0.5 \; m1 /pan
+0.5 \; m1 /vol 0.1;
+#X text 389 83 [ps.mixch~];
+#X connect 0 0 1 0;
+#X connect 1 1 11 0;
+#X connect 8 0 7 0;
+#X connect 9 0 10 0;
+#X connect 10 0 6 0;
+#X connect 10 1 6 1;

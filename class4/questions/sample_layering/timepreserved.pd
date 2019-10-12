@@ -1,4 +1,4 @@
-#N canvas 303 160 1377 868 12;
+#N canvas 112 51 1377 868 12;
 #N canvas 0 23 450 278 (subpatch) 0;
 #X array five 220500 float 3;
 #A 0 4.58307e-05 0.000211924 0.000580863 0.000971627 0.00104836 0.000908242
@@ -33741,7 +33741,7 @@
 #X obj 322 742 *~;
 #X obj 340 709 line~;
 #X obj 343 653 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6000 1;
+-1 -1 0 1;
 #X obj 340 677 pack f 50;
 #X obj 499 312 /;
 #X obj 499 364 *~ 0;
@@ -33757,7 +33757,7 @@
 #X text 658 199 multiply by sampling rate;
 #X text 694 220 result = number of samples (numbers in the array);
 #X obj 499 446 delwrite~ s1-del 5000;
-#N canvas 0 23 1060 788 transpose_s1 0;
+#N canvas 245 111 1060 788 transpose_s1 0;
 #X floatatom 19 87 0 0 0 0 - - -;
 #X obj 82 358 *~;
 #X obj 205 295 line~;

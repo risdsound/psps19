@@ -1,0 +1,139 @@
+#N canvas 238 23 1291 751 12;
+#X obj 735 93 list prepend 0;
+#X obj 735 121 list prepend 1;
+#X obj 735 149 list prepend 2;
+#X obj 735 177 list prepend 3;
+#X obj 735 205 list prepend 4;
+#X obj 735 233 list prepend 5;
+#X obj 735 261 list prepend 6;
+#X obj 735 289 list prepend 7;
+#X obj 735 317 list prepend 8;
+#X obj 735 345 list prepend 9;
+#X obj 735 373 list prepend 10;
+#X obj 735 401 list prepend 11;
+#X obj 735 429 list prepend 12;
+#X obj 735 457 list prepend 13;
+#X obj 735 485 list prepend 14;
+#X obj 735 513 list prepend 15;
+#X obj 41 116 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 74 116 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 107 116 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 140 116 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 173 116 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 206 116 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 239 116 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 272 116 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 305 116 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 338 116 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 371 116 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 404 116 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 437 116 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 470 116 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 503 116 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 536 116 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 868 93 s \$0-sequencer;
+#X obj 867 121 s \$0-sequencer;
+#X obj 868 149 s \$0-sequencer;
+#X obj 868 177 s \$0-sequencer;
+#X obj 868 205 s \$0-sequencer;
+#X obj 868 233 s \$0-sequencer;
+#X obj 868 261 s \$0-sequencer;
+#X obj 868 289 s \$0-sequencer;
+#X obj 868 317 s \$0-sequencer;
+#X obj 868 345 s \$0-sequencer;
+#X obj 868 373 s \$0-sequencer;
+#X obj 868 401 s \$0-sequencer;
+#X obj 868 429 s \$0-sequencer;
+#X obj 868 457 s \$0-sequencer;
+#X obj 868 485 s \$0-sequencer;
+#X obj 868 513 s \$0-sequencer;
+#X obj 15 438 table \$0-sequencer 16;
+#X obj 19 218 inlet;
+#X obj 19 303 tabread \$0-sequencer;
+#X obj 19 393 outlet;
+#X obj 19 339 select 1;
+#X obj 19 247 f;
+#X obj 49 247 + 1;
+#X obj 19 279 mod 16;
+#X obj 271 203 inlet;
+#X obj 271 259 route /seq /sync;
+#X obj 318 204 r \$1;
+#X obj 42 51 unpack f f f f f f f f f f f f f f f f, f 71;
+#X msg 134 220 1;
+#X connect 0 0 32 0;
+#X connect 1 0 33 0;
+#X connect 2 0 34 0;
+#X connect 3 0 35 0;
+#X connect 4 0 36 0;
+#X connect 5 0 37 0;
+#X connect 6 0 38 0;
+#X connect 7 0 39 0;
+#X connect 8 0 40 0;
+#X connect 9 0 41 0;
+#X connect 10 0 42 0;
+#X connect 11 0 43 0;
+#X connect 12 0 44 0;
+#X connect 13 0 45 0;
+#X connect 14 0 46 0;
+#X connect 15 0 47 0;
+#X connect 16 0 0 0;
+#X connect 17 0 1 0;
+#X connect 18 0 2 0;
+#X connect 19 0 3 0;
+#X connect 20 0 4 0;
+#X connect 21 0 5 0;
+#X connect 22 0 6 0;
+#X connect 23 0 7 0;
+#X connect 24 0 8 0;
+#X connect 25 0 9 0;
+#X connect 26 0 10 0;
+#X connect 27 0 11 0;
+#X connect 28 0 12 0;
+#X connect 29 0 13 0;
+#X connect 30 0 14 0;
+#X connect 31 0 15 0;
+#X connect 49 0 53 0;
+#X connect 50 0 52 0;
+#X connect 52 0 51 0;
+#X connect 53 0 54 0;
+#X connect 53 0 55 0;
+#X connect 54 0 53 1;
+#X connect 55 0 50 0;
+#X connect 56 0 57 0;
+#X connect 57 0 59 0;
+#X connect 57 1 60 0;
+#X connect 58 0 57 0;
+#X connect 59 0 16 0;
+#X connect 59 1 17 0;
+#X connect 59 2 18 0;
+#X connect 59 3 19 0;
+#X connect 59 4 20 0;
+#X connect 59 5 21 0;
+#X connect 59 6 22 0;
+#X connect 59 7 23 0;
+#X connect 59 8 24 0;
+#X connect 59 9 25 0;
+#X connect 59 10 26 0;
+#X connect 59 11 27 0;
+#X connect 59 12 28 0;
+#X connect 59 13 29 0;
+#X connect 59 14 30 0;
+#X connect 59 15 31 0;
+#X connect 60 0 53 1;
+#X coords 0 -1 1 1 535 40 2 36 110;

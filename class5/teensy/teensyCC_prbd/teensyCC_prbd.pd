@@ -1,4 +1,4 @@
-#N canvas 53 74 1346 646 10;
+#N canvas 205 39 1346 646 10;
 #X obj 152 217 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 288 217 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
@@ -11,18 +11,18 @@
 -1 -1 0 1;
 #X obj 423 254 ctlout 63;
 #X obj 562 254 ctlout 64;
-#X obj 212 377 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 215 369 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 349 377 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 351 369 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 209 404 ctlout 65;
-#X obj 346 404 ctlout 66;
-#X obj 491 377 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 212 396 ctlout 65;
+#X obj 348 396 ctlout 66;
+#X obj 489 369 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 630 377 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 628 369 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 488 404 ctlout 67;
-#X obj 627 404 ctlout 68;
+#X obj 486 396 ctlout 67;
+#X obj 625 396 ctlout 68;
 #X obj 776 377 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 917 377 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
@@ -40,14 +40,14 @@ LC chart for which can be set. These should be D3 \, D4 \, D6 \, D9
 #X obj 285 121 ctlin 2;
 #X obj 423 121 ctlin 3;
 #X obj 562 121 ctlin 4;
-#X floatatom 210 348 5 0 0 0 - - -;
-#X floatatom 346 348 5 0 0 0 - - -;
-#X floatatom 488 348 5 0 0 0 - - -;
-#X floatatom 627 348 5 0 0 0 - - -;
+#X floatatom 212 342 5 0 0 0 - - -;
+#X floatatom 348 342 5 0 0 0 - - -;
+#X floatatom 486 342 5 0 0 0 - - -;
+#X floatatom 625 342 5 0 0 0 - - -;
 #X floatatom 773 348 5 0 0 0 - - -;
 #X floatatom 914 348 5 0 0 0 - - -;
-#X msg 988 115 0;
-#N canvas 461 184 951 382 sequence 1;
+#X msg 1155 170 0;
+#N canvas 461 184 951 382 sequence 0;
 #X obj 61 268 * 127;
 #X obj 61 235 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -231,6 +231,31 @@ LC chart for which can be set. These should be D3 \, D4 \, D6 \, D9
 #X connect 34 0 35 0;
 #X connect 35 0 4 0;
 #X restore 166 19 pd random;
+#X obj 212 314 ctlin 5;
+#X obj 348 314 ctlin 6;
+#X obj 486 314 ctlin 7;
+#X obj 625 314 ctlin 8;
+#X obj 501 502 ctlin 51;
+#X obj 637 502 ctlin 52;
+#X obj 914 502 ctlin 54;
+#X obj 775 502 ctlin 53;
+#X obj 501 533 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 637 533 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 775 533 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 914 533 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 732 120 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 600 1;
+#X obj 871 120 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 200 1;
+#X floatatom 729 67 5 0 0 0 - - -;
+#X floatatom 868 67 5 0 0 0 - - -;
+#X obj 729 24 ctlin 71;
+#X obj 868 24 ctlin 72;
+#X text 941 21 touch sense pins;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 4 0 6 0;
@@ -265,3 +290,15 @@ LC chart for which can be set. These should be D3 \, D4 \, D6 \, D9
 #X connect 35 0 23 0;
 #X connect 35 0 24 0;
 #X connect 35 0 25 0;
+#X connect 38 0 29 0;
+#X connect 39 0 30 0;
+#X connect 40 0 31 0;
+#X connect 41 0 32 0;
+#X connect 42 0 46 0;
+#X connect 43 0 47 0;
+#X connect 44 0 49 0;
+#X connect 45 0 48 0;
+#X connect 52 0 50 0;
+#X connect 53 0 51 0;
+#X connect 54 0 52 0;
+#X connect 55 0 53 0;
