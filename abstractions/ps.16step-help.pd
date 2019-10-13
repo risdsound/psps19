@@ -48,7 +48,7 @@
 #X msg 983 708 \; ec1 /wet \$1;
 #X floatatom 983 679 5 0 0 0 - - -;
 #X obj 986 653 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3400 1;
+-1 -1 0 1;
 #X msg 761 418 \; kick /speed 0.5;
 #X obj 52 115 metro 250;
 #X msg 64 200 \; ec1 /ltime \$1;
