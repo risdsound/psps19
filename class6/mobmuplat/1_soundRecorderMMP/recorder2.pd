@@ -1,0 +1,81 @@
+#N canvas 413 54 1023 789 10;
+#X obj 255 639 dac~;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array rec1 88200 float 2;
+#X coords 0 1 88199 -1 400 140 1 0 0;
+#X restore 524 32 graph;
+#X obj -1 183 adc~;
+#X obj 41 182 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 167 450 vline~;
+#X obj 41 22 receive fromGUI;
+#X obj 41 50 list trim;
+#X msg 167 409 0 \, 88200 2000;
+#X obj 41 151 select 1;
+#X obj 41 116 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 100 151 select 1;
+#X obj 100 116 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 160 151 select 1;
+#X obj 160 116 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 100 182 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 160 182 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array rec2 88200 float 2;
+#X coords 0 1 88199 -1 400 140 1 0 0;
+#X restore 524 198 graph;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array rec3 88200 float 2;
+#X coords 0 1 88199 -1 400 140 1 0 0;
+#X restore 524 363 graph;
+#X obj 167 506 tabread4~ rec1;
+#X obj 266 450 vline~;
+#X msg 266 409 0 \, 88200 2000;
+#X obj 366 450 vline~;
+#X msg 366 409 0 \, 88200 2000;
+#X obj 266 506 tabread4~ rec2;
+#X obj 366 506 tabread4~ rec3;
+#X msg 219 124 \; rec1 normalize \; rec2 normalize \; rec3 normalize
+\;;
+#X obj 41 266 tabwrite~ rec1;
+#X obj 100 242 tabwrite~ rec2;
+#X obj 160 211 tabwrite~ rec3;
+#X obj 41 77 route /record1 /record2 /record3 /normalize /play1 /play2
+/play3, f 70;
+#X connect 2 0 26 0;
+#X connect 2 0 27 0;
+#X connect 2 0 28 0;
+#X connect 3 0 26 0;
+#X connect 4 0 18 0;
+#X connect 5 0 6 0;
+#X connect 6 0 29 0;
+#X connect 7 0 4 0;
+#X connect 8 0 3 0;
+#X connect 9 0 8 0;
+#X connect 10 0 14 0;
+#X connect 11 0 10 0;
+#X connect 12 0 15 0;
+#X connect 13 0 12 0;
+#X connect 14 0 27 0;
+#X connect 15 0 28 0;
+#X connect 18 0 0 0;
+#X connect 18 0 0 1;
+#X connect 19 0 23 0;
+#X connect 20 0 19 0;
+#X connect 21 0 24 0;
+#X connect 22 0 21 0;
+#X connect 23 0 0 0;
+#X connect 23 0 0 1;
+#X connect 24 0 0 0;
+#X connect 24 0 0 1;
+#X connect 29 0 9 0;
+#X connect 29 1 11 0;
+#X connect 29 2 13 0;
+#X connect 29 3 25 0;
+#X connect 29 4 7 0;
+#X connect 29 5 20 0;
+#X connect 29 6 22 0;

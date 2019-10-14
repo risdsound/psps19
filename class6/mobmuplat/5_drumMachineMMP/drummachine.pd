@@ -1,0 +1,150 @@
+#N canvas 141 28 1312 888 10;
+#X obj 611 477 loadbang;
+#X obj 612 498 t b b b b;
+#X obj 354 854 dac~;
+#X obj 354 762 +~;
+#X obj 106 476 sampleplay~ tp1;
+#X obj 262 476 sampleplay~ tp2;
+#X obj 418 476 sampleplay~ tp3;
+#X msg 612 534 \; tp1 /read Kick1.wav \; tp1 /speed 1 \; tp1 /vol 0.8
+;
+#X msg 612 596 \; tp2 /read Snare1.wav \; tp2 /speed 1 \; tp2 /vol
+0.4;
+#X msg 612 657 \; tp3 /read HiHatOp1.wav \; tp3 /speed 0.9 \; tp3 /vol
+0.5;
+#X obj 132 9 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 210 128 + 1;
+#X floatatom 159 171 0 0 0 0 - - -;
+#X obj 132 113 f 1;
+#X msg 170 64 1;
+#X text 217 64 <- reset;
+#X obj 132 144 t f f;
+#X floatatom 183 9 5 0 0 0 - - -, f 5;
+#X obj 132 35 metro 200;
+#X floatatom 159 222 5 0 0 0 - - -, f 5;
+#X obj 114 336 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 81 372 spigot;
+#X obj 159 198 mod 4;
+#X obj 159 245 select 0 1 2 3;
+#X obj 164 336 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 131 372 spigot;
+#X obj 213 336 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 180 372 spigot;
+#X obj 263 336 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 230 372 spigot;
+#X obj 329 335 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 296 371 spigot;
+#X obj 379 335 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 346 371 spigot;
+#X obj 428 335 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 395 371 spigot;
+#X obj 478 335 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 445 371 spigot;
+#X obj 553 336 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 520 372 spigot;
+#X obj 603 336 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 570 372 spigot;
+#X obj 652 336 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 619 372 spigot;
+#X obj 702 336 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 669 372 spigot;
+#X obj 504 27 receive fromGUI;
+#X obj 504 55 list trim;
+#X obj 510 139 route /tog11 /tog12 /tog13 /tog14;
+#X obj 705 166 route /tog21 /tog22 /tog23 /tog24;
+#X obj 900 193 route /tog31 /tog32 /tog33 /tog34;
+#X obj 504 84 route /on /speed;
+#X obj 307 145 expr 1000/($f1/60);
+#X floatatom 307 112 5 0 0 0 - - -, f 5;
+#X obj 307 79 * 1000;
+#X connect 0 0 1 0;
+#X connect 1 0 7 0;
+#X connect 1 1 8 0;
+#X connect 1 2 9 0;
+#X connect 3 0 2 0;
+#X connect 3 0 2 1;
+#X connect 4 0 3 0;
+#X connect 5 0 3 1;
+#X connect 6 0 3 0;
+#X connect 10 0 18 0;
+#X connect 11 0 13 1;
+#X connect 12 0 22 0;
+#X connect 13 0 16 0;
+#X connect 14 0 13 1;
+#X connect 16 0 11 0;
+#X connect 16 1 12 0;
+#X connect 17 0 18 1;
+#X connect 18 0 13 0;
+#X connect 19 0 23 0;
+#X connect 20 0 21 1;
+#X connect 21 0 4 0;
+#X connect 22 0 19 0;
+#X connect 23 0 21 0;
+#X connect 23 0 31 0;
+#X connect 23 0 39 0;
+#X connect 23 1 25 0;
+#X connect 23 1 33 0;
+#X connect 23 1 41 0;
+#X connect 23 2 27 0;
+#X connect 23 2 35 0;
+#X connect 23 2 43 0;
+#X connect 23 3 29 0;
+#X connect 23 3 37 0;
+#X connect 23 3 45 0;
+#X connect 24 0 25 1;
+#X connect 25 0 4 0;
+#X connect 26 0 27 1;
+#X connect 27 0 4 0;
+#X connect 28 0 29 1;
+#X connect 29 0 4 0;
+#X connect 30 0 31 1;
+#X connect 31 0 5 0;
+#X connect 32 0 33 1;
+#X connect 33 0 5 0;
+#X connect 34 0 35 1;
+#X connect 35 0 5 0;
+#X connect 36 0 37 1;
+#X connect 37 0 5 0;
+#X connect 38 0 39 1;
+#X connect 39 0 6 0;
+#X connect 40 0 41 1;
+#X connect 41 0 6 0;
+#X connect 42 0 43 1;
+#X connect 43 0 6 0;
+#X connect 44 0 45 1;
+#X connect 45 0 6 0;
+#X connect 46 0 47 0;
+#X connect 47 0 51 0;
+#X connect 48 0 20 0;
+#X connect 48 1 24 0;
+#X connect 48 2 26 0;
+#X connect 48 3 28 0;
+#X connect 48 4 49 0;
+#X connect 49 0 30 0;
+#X connect 49 1 32 0;
+#X connect 49 2 34 0;
+#X connect 49 3 36 0;
+#X connect 49 4 50 0;
+#X connect 50 0 38 0;
+#X connect 50 1 40 0;
+#X connect 50 2 42 0;
+#X connect 50 3 44 0;
+#X connect 51 0 10 0;
+#X connect 51 1 54 0;
+#X connect 51 2 48 0;
+#X connect 52 0 17 0;
+#X connect 53 0 52 0;
+#X connect 54 0 53 0;

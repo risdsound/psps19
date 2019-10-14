@@ -1,9 +1,9 @@
-#N canvas 59 23 1604 886 12;
+#N canvas -96 460 1604 886 12;
 #X obj 320 102 ps.16step;
 #X obj 112 46 expr 15000 / $f1;
 #X floatatom 112 22 5 0 0 0 - - -;
 #X floatatom 112 71 5 0 0 0 - - -;
-#X obj 51 22 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 51 22 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 246 309 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -42,7 +42,7 @@
 #X msg 892 570 \; ec1 /wet \$1;
 #X floatatom 892 541 5 0 0 0 - - -;
 #X obj 895 515 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 7700 1;
+-1 -1 0 1;
 #X obj 52 115 metro 250;
 #X msg 64 200 \; ec1 /ltime \$1;
 #X msg 190 200 \; ec1 /rtime \$1;
@@ -56,7 +56,7 @@
 #X msg 894 459 \; kick /speed \$1;
 #X floatatom 894 432 5 0 0 0 - - -;
 #X obj 977 13 loadbang;
-#X msg 1214 75 \; kick /read ./sounds/bossdr550mk2/Kick4.wav \; snare
+#X msg 1214 76 \; kick /read ./sounds/bossdr550mk2/Kick4.wav \; snare
 /read ./sounds/bossdr550mk2/Snare1.wav \; wood /read ./sounds/bossdr550mk2/WoodBlock1.wav
 \; hat /read ./sounds/bossdr550mk2/HiHatCl1.wav \;;
 #X msg 913 250 /vals 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
