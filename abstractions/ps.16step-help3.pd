@@ -1,0 +1,92 @@
+#N canvas 87 89 1567 799 12;
+#X obj 112 46 expr 15000 / $f1;
+#X floatatom 112 22 5 0 0 0 - - -;
+#X floatatom 112 71 5 0 0 0 - - -;
+#X obj 51 22 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 66 727 dac~, f 12;
+#X obj 54 344 ps.16step;
+#X obj 54 449 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 583 409 5 0 0 0 - - -;
+#X obj 583 439 mtof;
+#X floatatom 583 469 5 0 0 0 - - -;
+#X obj 66 601 *~, f 10;
+#X obj 66 570 phasor~;
+#X obj 66 652 *~ 0.25;
+#X obj 66 545 line~;
+#X msg 66 515 \$1 10;
+#X obj 996 113 loadbang;
+#X obj 52 115 metro 125;
+#X obj 133 482 ps.asd~ env1;
+#X msg 995 202 \; env1 /attack 10 \; env1 /sustain 50 \; env1 /decay
+20 \;;
+#X obj 582 212 textfile;
+#X msg 583 43 read seq1.txt;
+#X obj 700 212 textfile;
+#X msg 847 64 rewind;
+#X obj 855 91 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 879 89 < go to next line;
+#X msg 700 42 read vals1.txt;
+#X obj 753 250 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 753 280 spigot;
+#X obj 855 112 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 880 111 < loop;
+#X msg 753 306 rewind \, bang;
+#X obj 635 250 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 635 280 spigot;
+#X msg 635 306 rewind \, bang;
+#X obj 66 689 ps.echo~ ec2;
+#X msg 1146 206 \; ec2 /wet 0.6 \; ec2 /ltime 250 \; ec2 /lfeedback
+0.75 \; ec2 /rtime 375 \; ec2 /rfeedback 0.8 \;;
+#X obj 995 169 t b b;
+#X msg 996 311 \; env1 /attack 60 \; env1 /sustain 70 \; env1 /decay
+20 \;;
+#X msg 1149 311 \; ec2 /wet 0.6 \; ec2 /ltime 150 \; ec2 /lfeedback
+0.75 \; ec2 /rtime 45 \; ec2 /rfeedback 0.8 \;;
+#X text 156 22 BPM;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 16 1;
+#X connect 3 0 16 0;
+#X connect 5 0 6 0;
+#X connect 5 1 7 0;
+#X connect 6 0 17 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 14 0;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;
+#X connect 12 0 34 0;
+#X connect 12 0 34 1;
+#X connect 13 0 11 0;
+#X connect 14 0 13 0;
+#X connect 15 0 36 0;
+#X connect 16 0 5 0;
+#X connect 17 0 10 1;
+#X connect 19 0 5 1;
+#X connect 19 1 31 0;
+#X connect 20 0 19 0;
+#X connect 21 0 5 1;
+#X connect 21 1 26 0;
+#X connect 22 0 21 0;
+#X connect 22 0 19 0;
+#X connect 23 0 21 0;
+#X connect 23 0 19 0;
+#X connect 25 0 21 0;
+#X connect 26 0 27 0;
+#X connect 27 0 30 0;
+#X connect 28 0 27 1;
+#X connect 28 0 32 1;
+#X connect 30 0 21 0;
+#X connect 31 0 32 0;
+#X connect 32 0 33 0;
+#X connect 33 0 19 0;
+#X connect 34 0 4 0;
+#X connect 34 1 4 1;
+#X connect 36 0 18 0;
+#X connect 36 1 35 0;
