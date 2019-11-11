@@ -1,0 +1,31 @@
+#N canvas 256 136 769 469 10;
+#X obj 353 40 cnv 15 380 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 367 59 Cos-sin law panner. The instantiation argument is the
+address for sending parameter messages.;
+#X msg 405 203 \; p1 /pan 0.5;
+#X msg 405 238 \; p1 /pan 0;
+#X msg 405 273 \; p1 /pan 1;
+#X msg 486 238 \; p1 /pan 0.75;
+#X msg 487 273 \; p1 /pan 0.25;
+#X obj 34 269 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 34 294 \; pd dsp \$1;
+#X text 365 44 [ps.2pan~];
+#X obj 131 191 ps.2pan~ p1;
+#X obj 131 135 noise~;
+#X obj 131 162 *~ 0.05;
+#X obj 133 323 ps.10dac~;
+#X connect 7 0 8 0;
+#X connect 10 0 13 3;
+#X connect 10 0 13 1;
+#X connect 10 0 13 2;
+#X connect 10 0 13 4;
+#X connect 10 0 13 5;
+#X connect 10 1 13 8;
+#X connect 10 1 13 0;
+#X connect 10 1 13 6;
+#X connect 10 1 13 7;
+#X connect 10 1 13 9;
+#X connect 11 0 12 0;
+#X connect 12 0 10 0;
