@@ -1,8 +1,8 @@
-#N canvas 113 23 1567 930 12;
+#N canvas 177 23 1567 930 12;
 #X obj 112 46 expr 15000 / $f1;
 #X floatatom 112 22 5 0 0 0 - - -;
 #X floatatom 112 71 5 0 0 0 - - -;
-#X obj 51 22 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 51 22 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 258 759 dac~, f 12;
 #X obj 232 455 ps.16step;
@@ -73,12 +73,14 @@
 20 \;;
 #X msg 913 420 /vals 60 60 62 62 64 64 66 66 65 65 63 63 61 61 60 60
 ;
+#X floatatom 918 566 5 0 0 0 - - -;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X connect 2 0 62 1;
 #X connect 3 0 62 0;
 #X connect 5 0 26 0;
 #X connect 5 1 27 0;
+#X connect 5 2 67 0;
 #X connect 6 0 5 1;
 #X connect 7 0 8 0;
 #X connect 8 0 10 0;
