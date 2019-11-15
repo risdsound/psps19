@@ -1,0 +1,74 @@
+#N canvas 459 23 1019 681 10;
+#X msg 54 169 close;
+#X obj 37 14 cnv 15 440 60 empty empty empty 20 12 0 14 -200075 -66577
+0;
+#X msg 44 142 devices;
+#X floatatom 104 150 5 0 0 0 - - -;
+#X msg 104 169 open \$1;
+#X obj 44 256 s;
+#X obj 44 234 serial_print any;
+#X text 46 88 Requires [comport] object \; install under Help > Find
+Externals, f 72;
+#X text 44 22 [serial_print]: abstraction that works with Arduinos'
+Serial.print() and Serial.println() functions (with the use of [comport]).
+It was written by Alexandros Drymonitis. \; See https://github.com/alexdrymonitis/Arduino_Pd
+;
+#X floatatom 268 275 5 0 0 1 x - -;
+#X floatatom 268 358 5 0 0 0 - - -;
+#X obj 268 426 line 1;
+#X obj 271 462 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 6407 1;
+#X floatatom 268 221 5 0 0 0 - - -;
+#X floatatom 305 221 5 0 0 0 - - -;
+#X floatatom 423 274 5 0 0 1 y - -;
+#X floatatom 423 357 5 0 0 0 - - -;
+#X obj 423 425 line 1;
+#X obj 426 462 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 6756 1;
+#X obj 268 148 r acceleration:;
+#X floatatom 578 276 5 0 0 1 z - -;
+#X floatatom 578 359 5 0 0 0 - - -;
+#X obj 578 427 line 1;
+#X obj 581 462 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12514 1;
+#X obj 268 175 unpack f f f, f 13;
+#X floatatom 343 221 5 0 0 0 - - -;
+#X obj 268 316 ps.scale -10 10 0 1;
+#X obj 423 315 ps.scale -10 10 0 1;
+#X obj 578 317 ps.scale -10 10 0 1;
+#X text 267 485 tilt front/back;
+#X text 405 487 tilt side-to-side (left/right);
+#X text 614 487 tilt upside/downside;
+#X msg 268 395 \$1 80;
+#X msg 423 394 \$1 80;
+#X msg 578 396 \$1 80;
+#X obj 44 212 comport 1 9600;
+#X connect 0 0 35 0;
+#X connect 2 0 35 0;
+#X connect 3 0 4 0;
+#X connect 4 0 35 0;
+#X connect 6 0 5 0;
+#X connect 6 1 5 1;
+#X connect 9 0 26 0;
+#X connect 10 0 32 0;
+#X connect 11 0 12 0;
+#X connect 13 0 9 0;
+#X connect 14 0 15 0;
+#X connect 15 0 27 0;
+#X connect 16 0 33 0;
+#X connect 17 0 18 0;
+#X connect 19 0 24 0;
+#X connect 20 0 28 0;
+#X connect 21 0 34 0;
+#X connect 22 0 23 0;
+#X connect 24 0 13 0;
+#X connect 24 1 14 0;
+#X connect 24 2 25 0;
+#X connect 25 0 20 0;
+#X connect 26 0 10 0;
+#X connect 27 0 16 0;
+#X connect 28 0 21 0;
+#X connect 32 0 11 0;
+#X connect 33 0 17 0;
+#X connect 34 0 22 0;
+#X connect 35 0 6 0;
