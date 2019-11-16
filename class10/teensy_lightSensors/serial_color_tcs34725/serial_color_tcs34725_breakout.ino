@@ -1,22 +1,23 @@
+// install Adafruit_TCS34725 library, Tools > Manage Libraries
+// see reference: https://learn.adafruit.com/adafruit-color-sensors/overview
+// code for Teensy LC for connection with Pure Data 
+
 #include <Wire.h>
 #include "Adafruit_TCS34725.h"
 
 /* Example code for the Adafruit TCS34725 breakout library */
 
-/* Connect SCL    to analog 5
-   Connect SDA    to analog 4
-   Connect VDD    to 3.3V DC
-   Connect GROUND to common ground */
+/* Connect SCL    to Teensy pin 18 / A5
+   Connect SDA    to Teensy pin 19 / A4
+   Connect VDD    to Teensy 3.3V 
+   Connect GROUND to Teensy ground */
 
 /* Initialise with default values (int time = 2.4ms, gain = 1x) */
 // Adafruit_TCS34725 tcs = Adafruit_TCS34725();
 
 /* Initialise with specific int time and gain values */
-Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_101MS, TCS34725_GAIN_1X);
+Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_700MS, TCS34725_GAIN_1X);
 
-int currentR = 0;
-int currentG = 0;
-int currentB = 0;
 float red;
 float green;
 float blue;
@@ -44,12 +45,9 @@ void loop(void) {
   uint16_t r, g, b, c, colorTemp, lux;
 
   tcs.getRawData(&r, &g, &b, &c);
-  colorTemp = tcs.calculateColorTemperature(r, g, b);
+  // colorTemp = tcs.calculateColorTemperature(r, g, b);
+  colorTemp = tcs.calculateColorTemperature_dn40(r, g, b, c);
   lux = tcs.calculateLux(r, g, b);
-
-  currentR = r;
-  currentG = g;
-  currentB = b;
 
   red = r;
   green = g;
@@ -64,7 +62,7 @@ void loop(void) {
   Minimum = min(rd, gd);
   Minimum = min(Minimum, bd);
 
-  float h, s, l = (Maximum + Minimum) / 2;
+    float h, s, l = (Maximum + Minimum) / 2;
 
   if (Maximum == Minimum) {
     h = s = 0; // achromatic
@@ -81,37 +79,34 @@ void loop(void) {
     h /= 6;
   }
 
+  
+  Serial.print("color_temp: "); 
+  Serial.print(colorTemp, DEC);
+  Serial.print(" ");
+  Serial.println(" ");
+ 
+  Serial.print("lux: "); 
+  Serial.print(lux, DEC); 
+  Serial.println(" ");
 
-  Serial.print("color_values: ");
-  Serial.print(currentR);
+  Serial.print("rgbc: "); 
+  Serial.print(r, DEC);
   Serial.print(" ");
-  Serial.print(currentG);
+  Serial.print(g, DEC); 
   Serial.print(" ");
-  Serial.print(currentB);
+  Serial.print(b, DEC); 
   Serial.print(" ");
-  Serial.print(c);
-  Serial.print(" ");
-  Serial.print(colorTemp);
-  Serial.print(" ");
-  Serial.print(lux);
-  Serial.print(" ");
-  Serial.print(h); 
-  Serial.print(" ");
-  Serial.print(s); 
-  Serial.print(" ");
-  Serial.print(l); 
+  Serial.print(c, DEC); 
   Serial.print(" ");
   Serial.println(" ");
 
 
-  //    Serial.print("Color Temp: "); Serial.print(colorTemp, DEC); Serial.print(" K - ");
-  //    Serial.print("Lux: "); Serial.print(lux, DEC); Serial.print(" - ");
-  //    Serial.print("R: "); Serial.print(r, DEC); Serial.print(" ");
-  //    Serial.print("G: "); Serial.print(g, DEC); Serial.print(" ");
-  //    Serial.print("B: "); Serial.print(b, DEC); Serial.print(" ");
-  //    Serial.print("C: "); Serial.print(c, DEC); Serial.print(" ");
-  //    Serial.println(" ");
-
-
-
+  Serial.print("hsl: "); 
+  Serial.print(h, DEC);
+  Serial.print(" ");
+  Serial.print(s, DEC); 
+  Serial.print(" ");
+  Serial.print(l, DEC); 
+  Serial.print(" ");
+  Serial.println(" ");
 }
