@@ -1,0 +1,58 @@
+#N canvas 376 23 1019 681 10;
+#X msg 55 169 close;
+#X obj 37 14 cnv 15 440 60 empty empty empty 20 12 0 14 -200075 -66577
+0;
+#X msg 44 142 devices;
+#X floatatom 104 150 5 0 0 0 - - -;
+#X msg 104 169 open \$1;
+#X obj 44 256 s;
+#X obj 44 234 serial_print any;
+#X obj 44 212 comport 1 9600;
+#X floatatom 216 381 15 0 0 1 red - -;
+#X floatatom 216 404 15 0 0 1 green - -;
+#X floatatom 216 427 15 0 0 1 blue - -;
+#X text 46 88 Requires [comport] object \; install under Help > Find
+Externals, f 72;
+#X floatatom 216 449 15 0 0 1 clear - -;
+#X floatatom 213 221 15 0 0 1 color_temperature - -;
+#X floatatom 214 308 15 0 0 1 lux - -;
+#X floatatom 220 566 15 0 0 1 hue - -;
+#X floatatom 220 600 15 0 0 1 saturation - -;
+#X floatatom 220 634 15 0 0 1 lightness - -;
+#X text 424 587 HSL implementation is very rough in the Teensy code
+example \, and it is likely that the sensor requires some calibration
+for accuracy. However this might provide some useable data;
+#X text 371 402 Raw data from TCS34725 color sensor from Adafruit \;
+https://www.adafruit.com/product/1334;
+#X text 44 22 [serial_print]: abstraction that works with Arduinos'
+Serial.print() and Serial.println() functions (with the use of [comport]).
+It was written by Alexandros Drymonitis. \; See https://github.com/alexdrymonitis/Arduino_Pd
+;
+#X obj 213 173 r color_temp:;
+#X obj 213 264 r lux:;
+#X obj 107 329 r rgbc:;
+#X obj 104 498 r hsl:;
+#X obj 104 523 unpack f f f s;
+#X obj 107 355 unpack f f f f s;
+#X obj 213 285 unpack f s;
+#X obj 213 197 unpack f s;
+#X connect 0 0 7 0;
+#X connect 2 0 7 0;
+#X connect 3 0 4 0;
+#X connect 4 0 7 0;
+#X connect 6 0 5 0;
+#X connect 6 1 5 1;
+#X connect 7 0 6 0;
+#X connect 21 0 28 0;
+#X connect 22 0 27 0;
+#X connect 23 0 26 0;
+#X connect 24 0 25 0;
+#X connect 25 0 15 0;
+#X connect 25 1 16 0;
+#X connect 25 2 17 0;
+#X connect 26 0 8 0;
+#X connect 26 1 9 0;
+#X connect 26 2 10 0;
+#X connect 26 3 12 0;
+#X connect 27 0 14 0;
+#X connect 28 0 13 0;

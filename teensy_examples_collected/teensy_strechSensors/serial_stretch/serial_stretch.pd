@@ -1,0 +1,40 @@
+#N canvas 378 23 1019 681 10;
+#X msg 55 169 close;
+#X obj 37 14 cnv 15 440 60 empty empty empty 20 12 0 14 -200075 -66577
+0;
+#X msg 44 142 devices;
+#X floatatom 104 150 5 0 0 0 - - -;
+#X msg 104 169 open \$1;
+#X obj 44 256 s;
+#X obj 44 234 serial_print any;
+#X obj 44 212 comport 1 9600;
+#X text 46 88 Requires [comport] object \; install under Help > Find
+Externals, f 72;
+#X text 44 22 [serial_print]: abstraction that works with Arduinos'
+Serial.print() and Serial.println() functions (with the use of [comport]).
+It was written by Alexandros Drymonitis. \; See https://github.com/alexdrymonitis/Arduino_Pd
+;
+#X obj 43 300 r Voltage:;
+#X floatatom 44 354 5 0 0 0 - - -;
+#X floatatom 160 354 5 0 0 0 - - -;
+#X obj 159 300 r Resistance:;
+#X floatatom 157 457 5 0 0 0 - - -;
+#X obj 161 556 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 158 519 line 1;
+#X msg 158 493 \$1 200;
+#X obj 157 415 ps.scale 0.75 1.5 0 1;
+#X connect 0 0 7 0;
+#X connect 2 0 7 0;
+#X connect 3 0 4 0;
+#X connect 4 0 7 0;
+#X connect 6 0 5 0;
+#X connect 6 1 5 1;
+#X connect 7 0 6 0;
+#X connect 10 0 11 0;
+#X connect 12 0 18 0;
+#X connect 13 0 12 0;
+#X connect 14 0 17 0;
+#X connect 16 0 15 0;
+#X connect 17 0 16 0;
+#X connect 18 0 14 0;
