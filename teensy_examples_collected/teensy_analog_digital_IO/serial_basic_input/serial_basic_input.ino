@@ -9,7 +9,7 @@
 const int num_of_analog_pins = 3; // total numer of analog pins
 int analog_values[num_of_analog_pins];
 int analog_pins[] = {
-  3, 4, 5 // list each analog pin to use
+  0, 1, 2, // list each analog pin to use
 };
 
 // digital_values array size, must be constant
@@ -21,6 +21,10 @@ int digital_pins [] = {
 
 
 void setup() {
+
+ // analogReadResolution(12); // Teensy is 12bit ADC, you can set to 12 but this will introduce some noise, also you can set lower like 7bit for MIDI range
+  analogReadAveraging(32); // Teensy can do averaging of samples in hardware, set to 4, 8, 16, 32
+
   pinMode(0, INPUT_PULLUP);  // set pin modes individually
   //  pinMode(1, INPUT_PULLUP);
   //  pinMode(2, INPUT_PULLUP);
