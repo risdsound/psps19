@@ -1,0 +1,50 @@
+#N canvas 499 69 819 497 10;
+#X obj 287 407 dac~, f 5;
+#X obj 378 185 hsl 128 15 0 1 0 0 empty empty input_gain -2 -8 0 10
+-262144 -1 -1 12700 1;
+#X obj 450 226 hsl 128 15 0 1 0 0 empty empty saturation -2 -8 0 10
+-262144 -1 -1 8600 1;
+#X obj 368 371 *~;
+#X obj 390 304 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12700 1;
+#X obj 387 346 line~;
+#X obj 287 370 *~;
+#X text 451 375 Attribution CC 4 \, formuls \, 2017;
+#X text 451 347 Saturation effect with waveshaping based on Pd audio
+example E05.chebychev;
+#X obj 287 268 ps.saturation~;
+#X msg 447 247 /saturation \$1;
+#X msg 375 208 /gain \$1;
+#X msg 387 324 \$1 20;
+#X msg 190 93 /rec \$1;
+#X obj 190 68 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 246 68 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 246 93 /play \$1;
+#X floatatom 312 67 5 0 0 0 - - -;
+#X obj 128 45 adc~;
+#X msg 312 92 /overlap \$1;
+#X obj 128 150 ps.loop~;
+#X text 354 66 overlap factor in ms;
+#X connect 1 0 11 0;
+#X connect 2 0 10 0;
+#X connect 3 0 0 1;
+#X connect 4 0 12 0;
+#X connect 5 0 3 1;
+#X connect 5 0 6 1;
+#X connect 6 0 0 0;
+#X connect 9 0 6 0;
+#X connect 9 1 3 0;
+#X connect 10 0 9 2;
+#X connect 11 0 9 2;
+#X connect 12 0 5 0;
+#X connect 13 0 20 1;
+#X connect 14 0 13 0;
+#X connect 15 0 16 0;
+#X connect 16 0 20 1;
+#X connect 17 0 19 0;
+#X connect 18 0 20 0;
+#X connect 19 0 20 1;
+#X connect 20 0 9 0;
+#X connect 20 0 9 1;
