@@ -1,0 +1,93 @@
+#N canvas 224 23 1024 706 12;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array seq 32 float 1;
+#A 0 0.178565 0.235709 0.28571 0.807142 0.77857 0.749998 0.714283 0.678568
+0.621424 0.585709 0.521422 0.492849 0.464277 0.39999 0.371418 0.314274
+0.25713 0.207129 0.271416 0.378561 0.449991 0.535708 0.56428 0.692854
+0.749998 0.807142 0.592852 0.485706 0.442848 0.385704 0.371418 0.199994
+;
+#X coords 0 1 31 0 200 140 1 0 0;
+#X restore 419 144 graph;
+#X obj 64 214 tabwrite seq;
+#X floatatom 145 183 5 0 0 0 - - -;
+#X floatatom 65 83 5 0 0 0 - - -;
+#X obj 68 43 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 148 105 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 145 155 int;
+#X text 68 21 value;
+#X text 154 82 index (column);
+#X obj 145 128 * 32;
+#X obj 771 396 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 768 233 tabread seq;
+#X floatatom 768 274 5 0 0 0 - - -;
+#X text 813 195 index (column);
+#X obj 768 73 metro 125;
+#X obj 768 114 f 1;
+#X obj 824 115 + 1;
+#X obj 768 155 % 32;
+#X obj 768 44 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 768 196 5 0 0 0 - - -;
+#X obj 768 355 line 1;
+#X msg 768 314 \$1 50;
+#X floatatom 828 43 5 0 0 0 - - -;
+#X obj 93 320 array get seq;
+#X obj 93 291 bng 15 250 50 0 empty empty click_to_store_current_array
+17 7 0 10 -262144 -1 -1;
+#X obj 93 499 textfile;
+#X obj 93 351 list prepend add;
+#X obj 93 382 list trim;
+#X obj 93 642 array set seq;
+#X msg 277 444 rewind;
+#X obj 313 471 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 248 344 write ./storearrays.txt;
+#X msg 248 372 read ./storearrays.txt;
+#X msg 41 449 clear;
+#X obj 147 557 spigot;
+#X obj 146 533 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 186 534 tgl 15 0 empty empty loop 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 147 584 rewind \, bang;
+#X text 420 345 write to text file;
+#X text 420 371 recall from text file;
+#X text 341 443 start at first line of text file;
+#X text 341 469 go to next line of text file;
+#X text 240 530 return to beginning after last line is read;
+#X connect 2 0 1 1;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 9 0;
+#X connect 6 0 2 0;
+#X connect 9 0 6 0;
+#X connect 11 0 12 0;
+#X connect 12 0 21 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 15 0 17 0;
+#X connect 16 0 15 1;
+#X connect 17 0 19 0;
+#X connect 18 0 14 0;
+#X connect 19 0 11 0;
+#X connect 20 0 10 0;
+#X connect 21 0 20 0;
+#X connect 22 0 14 1;
+#X connect 23 0 26 0;
+#X connect 24 0 23 0;
+#X connect 25 0 28 0;
+#X connect 25 1 35 0;
+#X connect 26 0 27 0;
+#X connect 27 0 25 0;
+#X connect 29 0 25 0;
+#X connect 30 0 25 0;
+#X connect 31 0 25 0;
+#X connect 32 0 25 0;
+#X connect 33 0 25 0;
+#X connect 34 0 37 0;
+#X connect 35 0 34 0;
+#X connect 36 0 34 1;
+#X connect 37 0 25 0;
