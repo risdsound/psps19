@@ -1,6 +1,6 @@
 // install Adafruit_TCS34725 library, Tools > Manage Libraries
 // see reference: https://learn.adafruit.com/adafruit-color-sensors/overview
-// code for Teensy LC for connection with Pure Data 
+// code for Teensy LC for connection with Pure Data
 
 #include <Wire.h>
 #include "Adafruit_TCS34725.h"
@@ -9,7 +9,7 @@
 
 /* Connect SCL    to Teensy pin 18 / A5
    Connect SDA    to Teensy pin 19 / A4
-   Connect VDD    to Teensy 3.3V 
+   Connect VDD    to Teensy 3.3V
    Connect GROUND to Teensy ground */
 
 /* Initialise with default values (int time = 2.4ms, gain = 1x) */
@@ -26,6 +26,7 @@ float Minimum;
 float rd;
 float gd;
 float bd;
+
 
 
 void setup(void) {
@@ -62,7 +63,7 @@ void loop(void) {
   Minimum = min(rd, gd);
   Minimum = min(Minimum, bd);
 
-    float h, s, l = (Maximum + Minimum) / 2;
+  float h, s, l = (Maximum + Minimum) / 2;
 
   if (Maximum == Minimum) {
     h = s = 0; // achromatic
@@ -79,34 +80,36 @@ void loop(void) {
     h /= 6;
   }
 
-  
-  Serial.print("color_temp: "); 
+
+  Serial.print("color_temp: ");
   Serial.print(colorTemp, DEC);
   Serial.print(" ");
   Serial.println(" ");
- 
-  Serial.print("lux: "); 
-  Serial.print(lux, DEC); 
+
+  Serial.print("lux: ");
+  Serial.print(lux, DEC);
   Serial.println(" ");
 
-  Serial.print("rgbc: "); 
+  Serial.print("rgbc: ");
   Serial.print(r, DEC);
   Serial.print(" ");
-  Serial.print(g, DEC); 
+  Serial.print(g, DEC);
   Serial.print(" ");
-  Serial.print(b, DEC); 
+  Serial.print(b, DEC);
   Serial.print(" ");
-  Serial.print(c, DEC); 
+  Serial.print(c, DEC);
   Serial.print(" ");
   Serial.println(" ");
 
 
-  Serial.print("hsl: "); 
+  Serial.print("hsl: ");
   Serial.print(h, DEC);
   Serial.print(" ");
-  Serial.print(s, DEC); 
+  Serial.print(s, DEC);
   Serial.print(" ");
-  Serial.print(l, DEC); 
+  Serial.print(l, DEC);
   Serial.print(" ");
   Serial.println(" ");
+
+  delay(50);
 }

@@ -6,10 +6,10 @@
 */
 
 // analog values array size, must be constant
-const int num_of_analog_pins = 3; // total numer of analog pins
+const int num_of_analog_pins = 4; // total numer of analog pins
 int analog_values[num_of_analog_pins];
 int analog_pins[] = {
-  0, 1, 2, // list each analog pin to use
+  0, 1, 2, 3// list each analog pin to use
 };
 
 // digital_values array size, must be constant

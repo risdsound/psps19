@@ -1,5 +1,5 @@
 #N canvas 566 85 779 534 10;
-#N canvas 607 291 1183 1056 oneshotkeyboard 0;
+#N canvas 497 23 1183 1005 oneshotkeyboard 0;
 #X obj 377 755 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 547 423 pack f f;
@@ -236,7 +236,7 @@
 #X obj 497 892 outlet~;
 #X obj 543 279 swap 1;
 #X obj 543 331 /;
-#X floatatom 543 389 5 0 0 0 - - -;
+#X floatatom 543 363 5 0 0 0 - - -;
 #X obj 377 788 ps.sampleplay-x4~ vx1;
 #X msg 521 740 /speed1 \$1;
 #X msg 521 761 /speed2 \$1;
@@ -369,7 +369,7 @@
 #X text 514 24 understands MIDI notes;
 #X text 540 85 offset to middle C;
 #X obj 278 348 clip~ -1 1;
-#X obj 286 320 *~ 0.5;
+#X obj 278 320 *~ 0.5;
 #X connect 0 0 21 0;
 #X connect 2 0 0 0;
 #X connect 3 0 2 0;
