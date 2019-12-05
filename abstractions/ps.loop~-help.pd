@@ -1,12 +1,12 @@
-#N canvas 581 182 1408 512 10;
+#N canvas 250 164 1408 512 10;
 #X msg 366 67 /rec \$1;
 #X obj 366 42 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 422 42 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 422 42 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 422 67 /play \$1;
 #X floatatom 488 41 5 0 0 0 - - -;
-#X obj 299 356 dac~;
+#X obj 299 415 dac~;
 #X obj 304 19 adc~;
 #X msg 488 66 /overlap \$1;
 #X text 405 124 10 seconds maximum record time;
@@ -14,12 +14,51 @@
 #X text 530 40 overlap factor in ms;
 #X text 706 135 speed variation not implemented in this example yet
 ;
+#X obj 490 287 delay 5000;
+#X obj 488 174 select 1;
+#X obj 490 326 t b b, f 6;
+#X msg 523 374 0;
+#X msg 490 365 1;
+#X obj 489 202 t b b;
+#X msg 516 233 0, f 4;
+#X obj 516 261 send playtog;
+#X obj 523 420 send rectog;
+#X obj 365 17 receive rectog;
+#X obj 455 16 receive playtog;
+#X obj 492 446 send playtog;
+#X obj 304 304 ps.echo~ ev;
+#X msg 32 151 \; ev /wet 1 \; ev /ltime 500 \; ev /lfeedback 0.7 \;
+ev /rtime 800 \; ev /rfeedback 0.6 \;;
+#X obj 33 51 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X msg 33 76 \; ev /wet \$1 \;;
+#X msg 36 240 \; ev /wet 0.75 \; ev /ltime 100 \; ev /lfeedback 0.9
+\; ev /rtime 150 \; ev /rfeedback 0.85 \;;
+#X msg 39 335 \; ev /wet 1 \; ev /ltime 1500 \; ev /lfeedback 0.6 \;
+ev /rtime 1800 \; ev /rfeedback 0.8 \;;
+#X msg 37 427 \; ev /wet 1 \; ev /ltime 2000 \; ev /lfeedback 0.6 \;
+ev /rtime 2000 \; ev /rfeedback 0.8 \;;
 #X connect 0 0 9 1;
 #X connect 1 0 0 0;
+#X connect 1 0 13 0;
 #X connect 2 0 3 0;
 #X connect 3 0 9 1;
 #X connect 4 0 7 0;
 #X connect 6 0 9 0;
 #X connect 7 0 9 1;
-#X connect 9 0 5 0;
-#X connect 9 0 5 1;
+#X connect 9 0 24 0;
+#X connect 9 0 24 1;
+#X connect 12 0 14 0;
+#X connect 13 0 17 0;
+#X connect 14 0 16 0;
+#X connect 14 1 15 0;
+#X connect 15 0 20 0;
+#X connect 16 0 23 0;
+#X connect 17 0 12 0;
+#X connect 17 1 18 0;
+#X connect 18 0 19 0;
+#X connect 21 0 1 0;
+#X connect 22 0 2 0;
+#X connect 24 0 5 0;
+#X connect 24 1 5 1;
+#X connect 26 0 27 0;
