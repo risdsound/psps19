@@ -93,6 +93,7 @@
 #X floatatom 1034 329 5 0 0 0 - - -;
 #X obj 1129 145 * 2;
 #X obj 333 22 route /rec /play /overlap;
+#X obj 288 -4 r \$1;
 #X connect 0 0 87 0;
 #X connect 2 0 26 1;
 #X connect 3 0 2 0;
@@ -203,3 +204,4 @@
 #X connect 87 1 75 0;
 #X connect 87 2 51 0;
 #X connect 87 3 82 0;
+#X connect 88 0 87 0;
