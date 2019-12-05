@@ -1,0 +1,108 @@
+#N canvas 218 38 1394 912 10;
+#X obj 124 218 *~;
+#N canvas 0 23 450 300 (subpatch) 0;
+#X array array_echo-left 100 float 0;
+#X coords 0 1 99 -1 200 140 1 0 0;
+#X restore 524 255 graph;
+#X obj 337 368 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 377 369 <- graph;
+#X obj 337 405 metro 50;
+#X obj 260 26 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 103 316 ps.echo~ ech1;
+#X msg 413 69 \; ech1 /wet 1 \; ech1 /ltime 500 \; ech1 /lfeedback
+0.7 \; ech1 /rtime 800 \; ech1 /rfeedback 0.6 \;;
+#N canvas 0 23 450 300 (subpatch) 0;
+#X array array_echo-right 100 float 0;
+#X coords 0 1 99 -1 200 140 1 0 0;
+#X restore 732 255 graph;
+#X obj 337 435 tabwrite~ array_echo-left;
+#X obj 339 461 tabwrite~ array_echo-right;
+#X obj 413 45 loadbang;
+#X obj 82 74 adc~;
+#X obj 260 75 line~;
+#X msg 260 51 \$1 50;
+#X obj 192 217 *~;
+#X msg 592 69 \; ech1 /wet 0.7 \; ech1 /ltime 1500 \; ech1 /lfeedback
+0.7 \; ech1 /rtime 2000 \; ech1 /rfeedback 0.6 \;;
+#X msg 780 65 \; ech1 /wet 1 \; ech1 /ltime 1500 \; ech1 /lfeedback
+0.99 \; ech1 /rtime 2000 \; ech1 /rfeedback 0.99 \;;
+#X msg 938 72 \; ech1 /wet 1 \; ech1 /ltime 1500 \; ech1 /lfeedback
+0 \; ech1 /rtime 2000 \; ech1 /rfeedback 0 \;;
+#X floatatom 588 532 5 0 0 0 - - -;
+#X obj 590 460 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 1600 1;
+#X obj 588 508 + 50;
+#X obj 588 487 * 1950;
+#X floatatom 737 530 5 0 0 0 - - -;
+#X obj 739 458 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 2000 1;
+#X obj 737 506 + 50;
+#X obj 737 485 * 1950;
+#X floatatom 589 669 5 0 0 0 - - -;
+#X obj 591 597 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 6900 1;
+#X floatatom 738 667 5 0 0 0 - - -;
+#X obj 740 595 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 8300 1;
+#X obj 738 622 * 0.99;
+#X obj 589 624 * 0.99;
+#X obj 942 454 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12700 1;
+#X obj 939 424 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 587 557 \; ech1 /ltime \$1 \;;
+#X msg 737 555 \; ech1 /rtime \$1 \;;
+#X msg 939 483 \; ech1 /wet \$1 \;;
+#X msg 589 693 \; ech1 /lfeedback \$1 \;;
+#X msg 738 692 \; ech1 /rfeedback \$1 \;;
+#X obj 128 574 dac~;
+#X obj 91 528 *~;
+#X obj 169 474 line~;
+#X msg 169 450 \$1 50;
+#X obj 131 527 *~;
+#X obj 171 421 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3400 1;
+#X obj 124 246 clip~ -1 1;
+#X obj 192 246 clip~ -1 1;
+#X connect 0 0 46 0;
+#X connect 2 0 4 0;
+#X connect 4 0 9 0;
+#X connect 4 0 10 0;
+#X connect 5 0 14 0;
+#X connect 6 0 9 0;
+#X connect 6 0 41 0;
+#X connect 6 1 10 0;
+#X connect 6 1 44 0;
+#X connect 11 0 7 0;
+#X connect 12 0 0 0;
+#X connect 12 1 15 0;
+#X connect 13 0 0 1;
+#X connect 13 0 15 1;
+#X connect 14 0 13 0;
+#X connect 15 0 47 0;
+#X connect 19 0 35 0;
+#X connect 20 0 22 0;
+#X connect 21 0 19 0;
+#X connect 22 0 21 0;
+#X connect 23 0 36 0;
+#X connect 24 0 26 0;
+#X connect 25 0 23 0;
+#X connect 26 0 25 0;
+#X connect 27 0 38 0;
+#X connect 28 0 32 0;
+#X connect 29 0 39 0;
+#X connect 30 0 31 0;
+#X connect 31 0 29 0;
+#X connect 32 0 27 0;
+#X connect 33 0 37 0;
+#X connect 34 0 33 0;
+#X connect 41 0 40 0;
+#X connect 42 0 41 1;
+#X connect 42 0 44 1;
+#X connect 43 0 42 0;
+#X connect 44 0 40 1;
+#X connect 45 0 43 0;
+#X connect 46 0 6 0;
+#X connect 47 0 6 1;
