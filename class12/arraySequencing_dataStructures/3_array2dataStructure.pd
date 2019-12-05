@@ -1,0 +1,187 @@
+#N struct g2 float x float y array tab g2b;
+#N struct g2b float y;
+#N canvas 133 33 1386 870 12;
+#X obj 46 528 struct g2 float x float y array tab g2b;
+#N canvas 164 625 462 312 g2b 0;
+#X obj 66 204 struct g2b float y;
+#X restore 46 552 pd g2b;
+#X obj 141 404 append g2 x y;
+#X obj 154 192 pointer;
+#X obj 131 96 t b b b;
+#X obj 131 72 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 153 72 create;
+#X floatatom 46 456 5 0 0 0 - - -;
+#X obj 46 483 setsize g2 tab;
+#X floatatom 261 377 5 0 0 1 x - -;
+#X obj 319 439 element g2 tab;
+#X floatatom 332 376 5 0 0 1 y - -;
+#X obj 259 481 set g2b y;
+#X obj 141 367 pack 50 50;
+#X floatatom 141 338 5 0 0 0 - - -;
+#X floatatom 207 339 5 0 0 0 - - -;
+#X text 33 649 Use "plot" to define the color \, width \, starting
+point (x/y) \, and distance between points for this array.;
+#N canvas 107 80 822 381 lineplot 1;
+#X scalar g2 0 50 \; 82.1435 \; 4.2857 \; 5.71429 \; 7.5001 \; 107.143
+\; 107.143 \; 104.286 \; 102.143 \; 99.2861 \; 96.429 \; 93.5718 \;
+88.2146 \; 82.8575 \; 77.1432 \; 73.0955 \; 69.0479 \; 65.0002 \; 59.643
+\; 54.2859 \; 49.2858 \; 44.2858 \; 40.7144 \; 37.1429 \; 32.1429 \;
+30 \; 62.3823 \; 65.0014 \; 67.1443 \; 69.6444 \; 92.8592 \; 92.8592
+\; 89.2877 \; \;;
+#X restore 335 130 pd lineplot;
+#X msg 154 162 traverse pd-lineplot \, bang;
+#X msg 177 123 \; pd-lineplot clear;
+#N canvas 1178 80 450 278 (subpatch) 0;
+#X array seq2 32 float 1;
+#A 0 0.178565 0.957143 0.942857 0.924999 -0.0714334 -0.0714334 -0.0428618
+-0.0214331 0.00713855 0.0357102 0.0642818 0.117854 0.171425 0.228568
+0.269045 0.309521 0.349998 0.40357 0.457141 0.507142 0.557142 0.592856
+0.628571 0.678571 0.7 0.376177 0.349986 0.328557 0.303556 0.0714082
+0.0714082 0.107123;
+#X coords 0 1 31 0 200 140 1 0 0;
+#X restore 1047 135 graph;
+#X obj 552 80 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 721 563 textfile;
+#X msg 905 508 rewind;
+#X obj 941 535 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 876 408 write ./storearrays.txt;
+#X msg 876 436 read ./storearrays.txt;
+#X msg 721 512 clear;
+#X obj 775 621 spigot;
+#X obj 774 597 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 814 598 tgl 15 0 empty empty loop 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 775 648 rewind \, bang;
+#X text 1048 409 write to text file;
+#X text 1048 435 recall from text file;
+#X text 969 507 start at first line of text file;
+#X text 969 533 go to next line of text file;
+#X text 868 594 return to beginning after last line is read;
+#X obj 765 353 loadbang;
+#X obj 765 379 t b b b;
+#X msg 811 406 1;
+#X obj 721 706 array set seq2;
+#X obj 746 357 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 86 19 loadbang;
+#X obj 86 47 t b b b;
+#X obj 52 21 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 552 104 array get seq2;
+#N canvas 0 23 450 300 list-drip 0;
+#X obj 42 39 inlet;
+#X obj 42 149 list store;
+#X obj 42 83 until;
+#X obj 42 105 f;
+#X obj 72 105 + 1;
+#X msg 42 127 get \$1 1;
+#X obj 85 84 0;
+#X obj 42 171 outlet;
+#X obj 109 171 outlet;
+#X obj 42 61 t b b a;
+#X connect 0 0 9 0;
+#X connect 1 0 7 0;
+#X connect 1 1 8 0;
+#X connect 1 1 2 1;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 3 1;
+#X connect 5 0 1 0;
+#X connect 6 0 3 1;
+#X connect 9 0 2 0;
+#X connect 9 1 6 0;
+#X connect 9 2 1 1;
+#X restore 552 132 pd list-drip;
+#X obj 552 160 t b f;
+#X obj 461 237 pack 0 0, f 18;
+#X obj 261 266 unpack 0 0;
+#X obj 332 322 * 100;
+#X obj 332 294 * -1;
+#X obj 478 80 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 332 350 + 100;
+#X text 496 79 reset;
+#X msg 46 428 32;
+#X msg 478 109 0;
+#X obj 503 195 + 1;
+#X obj 461 196 f 0;
+#X obj 259 439 f;
+#X obj 260 404 t b f;
+#X obj 46 576 plot tab 0 4 40 40 20;
+#X obj 443 47 t b b;
+#X obj 443 20 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 464 19 send array to data structure;
+#X obj 602 374 list prepend add;
+#X obj 602 405 list trim;
+#X obj 602 298 bng 15 250 50 0 empty empty click_to_store_current_array
+17 7 0 10 -262144 -1 -1;
+#X obj 602 322 array get seq2;
+#X connect 2 0 8 1;
+#X connect 2 0 10 1;
+#X connect 3 0 2 2;
+#X connect 4 0 14 0;
+#X connect 4 1 18 0;
+#X connect 4 2 19 0;
+#X connect 5 0 4 0;
+#X connect 7 0 8 0;
+#X connect 9 0 60 0;
+#X connect 10 0 12 1;
+#X connect 11 0 59 1;
+#X connect 13 0 2 0;
+#X connect 14 0 13 0;
+#X connect 15 0 13 1;
+#X connect 18 0 3 0;
+#X connect 21 0 45 0;
+#X connect 22 0 40 0;
+#X connect 22 1 29 0;
+#X connect 23 0 22 0;
+#X connect 24 0 22 0;
+#X connect 25 0 22 0;
+#X connect 26 0 22 0;
+#X connect 27 0 22 0;
+#X connect 28 0 31 0;
+#X connect 29 0 28 0;
+#X connect 30 0 28 1;
+#X connect 31 0 22 0;
+#X connect 37 0 38 0;
+#X connect 38 0 23 0;
+#X connect 38 1 26 0;
+#X connect 38 2 39 0;
+#X connect 39 0 30 0;
+#X connect 41 0 38 0;
+#X connect 42 0 43 0;
+#X connect 43 1 55 0;
+#X connect 43 2 5 0;
+#X connect 44 0 43 0;
+#X connect 45 0 46 0;
+#X connect 46 0 47 0;
+#X connect 47 0 58 0;
+#X connect 47 1 48 1;
+#X connect 48 0 49 0;
+#X connect 49 0 9 0;
+#X connect 49 1 51 0;
+#X connect 50 0 53 0;
+#X connect 51 0 50 0;
+#X connect 52 0 56 0;
+#X connect 53 0 11 0;
+#X connect 55 0 7 0;
+#X connect 56 0 58 1;
+#X connect 57 0 58 1;
+#X connect 58 0 48 0;
+#X connect 58 0 57 0;
+#X connect 59 0 12 0;
+#X connect 60 0 59 0;
+#X connect 60 1 10 0;
+#X connect 62 0 21 0;
+#X connect 62 1 52 0;
+#X connect 63 0 62 0;
+#X connect 65 0 66 0;
+#X connect 66 0 22 0;
+#X connect 67 0 68 0;
+#X connect 68 0 65 0;

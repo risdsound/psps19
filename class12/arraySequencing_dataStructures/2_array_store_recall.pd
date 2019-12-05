@@ -1,0 +1,159 @@
+#N canvas 177 60 1305 771 12;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array seq 32 float 1;
+#A 0 0.178565 0.957143 0.0428578 0.0785729 0.107145 0.135717 0.192861
+0.228576 0.292864 0.328579 0.357151 0.414295 0.45001 0.485725 0.550012
+0.614299 0.650015 0.700016 0.742874 0.778589 0.807161 0.821447 0.842876
+0.864305 0.885734 0.907163 0.928592 0.928592 0.303556 0.0714082 0.0714082
+0.107123;
+#X coords 0 1 31 0 200 140 1 0 0;
+#X restore 419 144 graph;
+#X obj 64 214 tabwrite seq;
+#X floatatom 145 183 5 0 0 0 - - -;
+#X floatatom 65 83 5 0 0 0 - - -;
+#X obj 68 43 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 148 105 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 145 155 int;
+#X text 68 21 value;
+#X text 154 82 index (column);
+#X obj 145 128 * 32;
+#X obj 771 396 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 2867 1;
+#X obj 768 233 tabread seq;
+#X floatatom 768 274 5 0 0 0 - - -;
+#X text 813 195 index (column);
+#X obj 768 73 metro 125;
+#X obj 768 114 f 1;
+#X obj 824 115 + 1;
+#X obj 768 155 % 32;
+#X obj 768 44 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X floatatom 768 196 5 0 0 0 - - -;
+#X obj 768 355 line 1;
+#X msg 768 314 \$1 50;
+#X floatatom 828 43 5 0 0 0 - - -;
+#X obj 93 320 array get seq;
+#X obj 93 291 bng 15 250 50 0 empty empty click_to_store_current_array
+17 7 0 10 -262144 -1 -1;
+#X obj 93 499 textfile;
+#X obj 93 351 list prepend add;
+#X obj 93 382 list trim;
+#X obj 93 642 array set seq;
+#X msg 277 444 rewind;
+#X obj 313 471 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 248 344 write ./storearrays.txt;
+#X msg 248 372 read ./storearrays.txt;
+#X msg 41 449 clear;
+#X obj 147 557 spigot;
+#X obj 146 533 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 186 534 tgl 15 0 empty empty loop 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 147 584 rewind \, bang;
+#X text 420 345 write to text file;
+#X text 420 371 recall from text file;
+#X text 341 443 start at first line of text file;
+#X text 341 469 go to next line of text file;
+#X text 240 530 return to beginning after last line is read;
+#X obj 667 390 * 40, f 6;
+#X obj 667 424 int;
+#X floatatom 666 461 5 0 0 0 - - -;
+#X obj 806 507 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 883 508 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 965 506 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 805 557 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 884 556 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 967 552 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 807 604 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 884 605 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 966 603 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 810 651 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 887 652 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 969 650 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 724 443 select 1 3 5 7 8 9 11 13 15 17 21 23 25 29 31 33 37
+;
+#X obj 727 504 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 726 554 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 726 604 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 728 649 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 764 17 read data from array;
+#X obj 253 229 loadbang;
+#X obj 253 255 t b b b;
+#X msg 299 282 1;
+#X connect 2 0 1 1;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 9 0;
+#X connect 6 0 2 0;
+#X connect 9 0 6 0;
+#X connect 11 0 12 0;
+#X connect 12 0 21 0;
+#X connect 12 0 43 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 15 0 17 0;
+#X connect 16 0 15 1;
+#X connect 17 0 19 0;
+#X connect 18 0 14 0;
+#X connect 19 0 11 0;
+#X connect 20 0 10 0;
+#X connect 21 0 20 0;
+#X connect 22 0 14 1;
+#X connect 23 0 26 0;
+#X connect 24 0 23 0;
+#X connect 25 0 28 0;
+#X connect 25 1 35 0;
+#X connect 26 0 27 0;
+#X connect 27 0 25 0;
+#X connect 29 0 25 0;
+#X connect 30 0 25 0;
+#X connect 31 0 25 0;
+#X connect 32 0 25 0;
+#X connect 33 0 25 0;
+#X connect 34 0 37 0;
+#X connect 35 0 34 0;
+#X connect 36 0 34 1;
+#X connect 37 0 25 0;
+#X connect 43 0 44 0;
+#X connect 44 0 45 0;
+#X connect 45 0 58 0;
+#X connect 58 0 59 0;
+#X connect 58 1 46 0;
+#X connect 58 2 47 0;
+#X connect 58 3 48 0;
+#X connect 58 4 60 0;
+#X connect 58 5 49 0;
+#X connect 58 6 50 0;
+#X connect 58 7 51 0;
+#X connect 58 8 61 0;
+#X connect 58 9 52 0;
+#X connect 58 10 53 0;
+#X connect 58 11 54 0;
+#X connect 58 12 62 0;
+#X connect 58 13 55 0;
+#X connect 58 14 56 0;
+#X connect 58 15 57 0;
+#X connect 64 0 65 0;
+#X connect 65 0 29 0;
+#X connect 65 1 32 0;
+#X connect 65 2 66 0;
+#X connect 66 0 36 0;
