@@ -1,0 +1,38 @@
+#N canvas 325 287 1166 539 12;
+#X obj 563 28 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 560 74 /pan \$1;
+#X floatatom 560 53 5 0 0 0 - - -;
+#X obj 867 66 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 864 91 5 0 0 0 - - -;
+#X msg 864 112 /distance \$1;
+#X obj 149 157 ps.10pan~, f 66;
+#X obj 149 99 noise~;
+#X obj 861 11 loadbang;
+#X msg 859 38 0;
+#X obj 742 232 osc~ 50;
+#X text 807 229 subwoofers;
+#X text 68 154 main 10;
+#X obj 195 320 pw.10dac~;
+#X connect 0 0 2 0;
+#X connect 1 0 6 1;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 1;
+#X connect 6 0 13 0;
+#X connect 6 1 13 1;
+#X connect 6 2 13 2;
+#X connect 6 3 13 3;
+#X connect 6 4 13 4;
+#X connect 6 5 13 5;
+#X connect 6 6 13 6;
+#X connect 6 7 13 7;
+#X connect 6 8 13 8;
+#X connect 6 9 13 9;
+#X connect 7 0 6 0;
+#X connect 8 0 9 0;
+#X connect 9 0 3 0;
+#X connect 10 0 13 10;
+#X connect 10 0 13 11;
