@@ -1,0 +1,20 @@
+#N canvas 509 108 450 300 12;
+#X obj 135 158 ps.incdec;
+#X floatatom 136 230 5 0 0 0 - - -;
+#X msg 84 90 /inc;
+#X msg 154 90 /dec;
+#X msg 227 88 /start 1;
+#X msg 314 88 /mod 20;
+#X obj 234 17 loadbang;
+#X obj 235 52 t b b;
+#X obj 196 26 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 7 0;
+#X connect 7 0 4 0;
+#X connect 7 1 5 0;
+#X connect 8 0 7 0;
