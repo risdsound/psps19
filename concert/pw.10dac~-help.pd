@@ -1,6 +1,6 @@
-#N canvas 325 287 1166 539 12;
+#N canvas 325 101 1166 725 12;
 #X obj 563 28 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 4300 1;
 #X msg 560 74 /pan \$1;
 #X floatatom 560 53 5 0 0 0 - - -;
 #X obj 867 66 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
@@ -15,6 +15,10 @@
 #X text 807 229 subwoofers;
 #X text 68 154 main 10;
 #X obj 195 320 pw.10dac~;
+#X text 681 317 record feature puts file in same directory as abstration
+and automatically indexes files each time "openFile" is clicked...
+files will be pw1.wav \, pw2.wav \, etc. It will create a 12-channel
+.wav file (first 10 for main speaker and last 2 for subwoofers);
 #X connect 0 0 2 0;
 #X connect 1 0 6 1;
 #X connect 2 0 1 0;
