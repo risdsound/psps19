@@ -1,0 +1,35 @@
+#N canvas 454 75 1039 602 12;
+#X obj 165 287 ps.recorder~;
+#X obj 174 53 noise~;
+#X obj 174 167 *~;
+#X obj 221 139 line~;
+#X msg 221 114 \$1 100;
+#X obj 283 51 noise~;
+#X obj 283 165 *~;
+#X obj 330 137 line~;
+#X msg 330 112 \$1 100;
+#X obj 333 83 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4200 1;
+#X text 432 303 for best results make sure your audio does not exceed
+-6 on the VU meter;
+#X msg 477 235 /record \$1;
+#X obj 477 205 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 572 235 /level \$1;
+#X floatatom 572 205 5 0 0 0 - - -;
+#X msg 475 164 /openfile;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 1;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 0 1;
+#X connect 7 0 6 1;
+#X connect 8 0 7 0;
+#X connect 9 0 4 0;
+#X connect 9 0 8 0;
+#X connect 11 0 0 2;
+#X connect 12 0 11 0;
+#X connect 13 0 0 2;
+#X connect 14 0 13 0;
+#X connect 15 0 0 2;
